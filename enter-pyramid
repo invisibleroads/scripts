@@ -1,0 +1,2 @@
+pushd $PROJECTS
+source pyramid-env/bin/activate

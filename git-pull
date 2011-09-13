@@ -1,0 +1,7 @@
+cd $PROJECTS
+for folder in *
+do
+    pushd $folder
+    git pull
+    popd
+done

@@ -1,0 +1,25 @@
+SCRIPTS=$HOME/Scripts
+if [ ! -e $SCRIPTS ]; then
+    mkdir $SCRIPTS
+fi
+for filename in .bash_profile .bashrc .gvimrc .pylintrc .vimrc
+do
+    cp $filename $HOME
+    echo 'cp '$filename $HOME
+done
+for filename in clean convert-wma enter-pyramid git-pull git-status grep- grep- minify-js.py reboot-windows ssh- strip-
+do
+    cp $filename $SCRIPTS
+    chmod a+x $filename
+    echo 'cp '$filename $SCRIPTS
+done
+
+PYLINT_VIM=$HOME/.vim/compiler
+mkdir -p $PYLINT_VIM
+cp pylint.vim $PYLINT_VIM
+echo 'cp pylint.vim' $PYLINT_VIM
+
+DIRDIFF_VIM=$HOME/.vim/plugin
+mkdir -p $DIRDIFF_VIM
+cp DirDiff.vim $DIRDIFF_VIM
+echo 'cp DirDiff.vim' $DIRDIFF_VIM

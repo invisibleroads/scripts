@@ -1,0 +1,8 @@
+NETMASK=255.255.255.0
+IP_REMOTE=192.168.10.10
+IP_LOCAL=192.168.10.11
+if [[ ! `ifconfig eth0` =~ $IP_LOCAL ]]
+then
+    su -c "ifconfig eth0 $IP_LOCAL netmask $NETMASK up"
+fi
+ssh -A -X $IP_REMOTE

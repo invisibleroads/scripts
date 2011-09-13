@@ -1,0 +1,13 @@
+grep "$@" * -R | grep -v .git
+
+find . -name '*.zip' | while read file
+do
+    echo "=== ${file} ==="
+    unzip -l "$file" | grep "$@"
+done
+
+find . -name '*.gz' | while read file
+do
+    echo "=== ${file} ==="
+    tar -tf "$file" | grep "$@"
+done
