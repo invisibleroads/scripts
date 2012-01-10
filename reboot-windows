@@ -1,4 +1,0 @@
-#!/bin/bash
-let WINDOWS=`su -c "grep ^title /boot/grub/grub.conf"|grep -n Windows|cut -f 1 -d :`-1
-su -c "echo 'savedefault --stage2=/boot/grub/stage2 --default=$WINDOWS --once' | grub"
-reboot
