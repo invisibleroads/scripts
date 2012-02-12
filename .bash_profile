@@ -7,6 +7,4 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/Scripts
-
-export PATH
+export PATH=$PATH:$HOME/Scripts

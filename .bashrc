@@ -8,5 +8,5 @@ fi
 # User specific aliases and functions
 
 export SVN_EDITOR=vim
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export PROJECTS=$HOME/Projects
+export PYRAMID_ENV=$PROJECTS/pyramid-env
