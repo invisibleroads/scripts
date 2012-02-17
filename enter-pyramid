@@ -1,2 +1,2 @@
+source $PYRAMID_ENV/bin/activate
 pushd $PROJECTS
-source pyramid-env/bin/activate
