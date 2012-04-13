@@ -7,7 +7,7 @@ do
     cp $filename $HOME
     echo 'cp '$filename $HOME
 done
-for filename in clean enter-pyramid git-pull git-status grep- grep- minify-js.py grub2-windows ssh- strip-
+for filename in clean ep git-pull git-status grep- grep- minify-js.py grub2-windows ssh- strip-
 do
     cp $filename $SCRIPTS
     chmod a+x $filename
