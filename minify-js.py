@@ -2,6 +2,7 @@
 'Minifies javascript using the Google Closure Compiler'
 import os
 import simplejson
+import sys
 from urllib import urlencode
 from httplib import HTTPConnection
 from argparse import ArgumentParser
@@ -20,13 +21,20 @@ def print_dictionaries(ds):
 if __name__ == '__main__':
     # Load arguments
     argumentParser = ArgumentParser()
-    argumentParser.add_argument('sourcePaths', metavar='PATH', nargs=1,
-        help='javascript source file')
+    argumentParser.add_argument('sourcePath', metavar='PATH', help='javascript source file')
+    argumentParser.add_argument('targetFolder', metavar='PATH', help='target folder', nargs='?', default='.')
     args = argumentParser.parse_args()
-    sourcePath = args.sourcePaths[0]
+    sourcePath = args.sourcePath
+    targetFolder = args.targetFolder
+    # Load code
+    try:
+        sourceCode = open(sourcePath).read()
+    except IOError:
+        print 'Could not open "%s"' % sourcePath
+        sys.exit(1)
     # Send request
     params = urlencode([
-        ('js_code', open(sourcePath).read()),
+        ('js_code', sourceCode),
         ('compilation_level', 'SIMPLE_OPTIMIZATIONS'),
         ('output_format', 'json'),
         ('output_info', 'compiled_code'),
@@ -45,7 +53,9 @@ if __name__ == '__main__':
     elif 'warnings' in data:
         print_dictionaries(data['warnings'])
     elif 'compiledCode' in data:
-        targetPath = sourcePath[:-3] if sourcePath.endswith('.js') else sourcePath
+        if not os.path.exists(targetFolder):
+            os.mkdir(targetFolder)
+        targetPath = os.path.join(targetFolder, sourcePath[:-3] if sourcePath.endswith('.js') else sourcePath)
         open(targetPath + '.min.js', 'wt').write(data['compiledCode'])
         statistics = data['statistics']
         originalSize = statistics['originalSize']
