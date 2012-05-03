@@ -23,5 +23,3 @@ DIRDIFF_VIM=$HOME/.vim/plugin
 mkdir -p $DIRDIFF_VIM
 cp DirDiff.vim $DIRDIFF_VIM
 echo 'cp DirDiff.vim' $DIRDIFF_VIM
-
-sudo yum -y install xcalib
