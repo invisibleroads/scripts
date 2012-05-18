@@ -1,4 +1,4 @@
-SCRIPTS=$HOME/Scripts
+SCRIPTS=$HOME/.scripts
 if [ ! -e $SCRIPTS ]; then
     mkdir $SCRIPTS
 fi
@@ -7,7 +7,7 @@ do
     cp $filename $HOME
     echo 'cp '$filename $HOME
 done
-for filename in clean ep git-pull git-status grep- grep- invert-display minify-js.py grub2-windows ssh- strip-
+for filename in clean ep git-pull git-status grep- grep- invert-display minify-js.py grub2-windows ssh-
 do
     cp $filename $SCRIPTS
     chmod a+x $filename

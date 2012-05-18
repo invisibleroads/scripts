@@ -4,4 +4,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-export PATH=$PATH:$HOME/Scripts
+export PATH=$PATH:$HOME/.scripts
