@@ -1,1 +1,1 @@
-grep "$@" * -R | grep -v .git
+grep "$@" * -R | grep -v ^.git
