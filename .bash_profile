@@ -3,8 +3,9 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 # User specific environment and startup programs
-export PATH=$PATH:$HOME/.scripts
+export EDITOR=/usr/bin/vim
 export PROJECTS=$HOME/Projects
+export PATH=$PATH:$HOME/.scripts
 export VIRTUAL_ENV=$HOME/.virtualenv
 if [ -d $VIRTUAL_ENV ]; then
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib
