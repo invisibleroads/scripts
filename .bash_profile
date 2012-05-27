@@ -14,4 +14,5 @@ if [ -d $VIRTUAL_ENV ]; then
     # Add CUDA support
     export PATH=$PATH:$VIRTUAL_ENV/opt/cuda/bin
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/opt/cuda/lib
+    export CUDA_ROOT=$VIRTUAL_ENV/opt/cuda
 fi
