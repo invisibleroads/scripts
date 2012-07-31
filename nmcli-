@@ -1,3 +1,0 @@
-BSSID=$1
-PASSWORD=$2
-nmcli dev wifi connect $BSSID password $PASSWORD
