@@ -1,20 +1,31 @@
-set ts=4
-set sw=4
-set sta
-set sr
-set et
-set ai
-set hls
-set is
-filetype plugin on
-filetype indent on
-syn on
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-let g:Tex_ViewRule_dvi='xdvi'
-autocmd FileType python compiler pylint
-let g:pylint_onwrite = 0
-let g:pylint_show_rate = 0
-au BufRead,BufNewFile *.py_tmpl setfiletype python
-au BufRead,BufNewFile *.mako setfiletype html
-au BufRead,BufNewFile *.mako_tmpl setfiletype html
+" Define tab behavior
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set shiftround
+" Define search behavior
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+" Enable syntax highlighting
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+syntax on
+autocmd BufRead,BufNewFile *.py_tmpl setfiletype python
+autocmd BufRead,BufNewFile *.mako setfiletype html
+autocmd BufRead,BufNewFile *.mako_tmpl setfiletype html
+" Remap window movement keys
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+" Remap tab movement keys
+map <Leader>[ <esc>:tabprevious<CR>
+map <Leader>] <esc>:tabnext<CR>
+" Set plugin options: ctrlp
+set wildignore+=*.pyc
+set wildignore+=*_build/*

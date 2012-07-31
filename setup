@@ -2,11 +2,13 @@ SCRIPTS=$HOME/.scripts
 if [ ! -e $SCRIPTS ]; then
     mkdir $SCRIPTS
 fi
+
 for filename in .bash_profile .bashrc .gvimrc .pylintrc .vimrc
 do
     cp $filename $HOME
     echo 'cp '$filename $HOME
 done
+
 for filename in clean git-pull git-status grep- grep- invert-display minify-js.py grub2-windows ssh-
 do
     cp $filename $SCRIPTS
@@ -14,12 +16,12 @@ do
     echo 'cp '$filename $SCRIPTS
 done
 
-PYLINT_VIM=$HOME/.vim/compiler
-mkdir -p $PYLINT_VIM
-cp pylint.vim $PYLINT_VIM
-echo 'cp pylint.vim' $PYLINT_VIM
+rm -Rf ~/.vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
 
-DIRDIFF_VIM=$HOME/.vim/plugin
-mkdir -p $DIRDIFF_VIM
-cp DirDiff.vim $DIRDIFF_VIM
-echo 'cp DirDiff.vim' $DIRDIFF_VIM
+cd ~/.vim/bundle
+git clone https://github.com/vim-scripts/DirDiff.vim.git 
+git clone https://github.com/kien/ctrlp.vim.git 
+git clone https://github.com/klen/python-mode.git
+git clone https://github.com/Raimondi/delimitMate.git
