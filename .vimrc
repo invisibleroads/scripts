@@ -7,8 +7,6 @@ set shiftround
 " Define search behavior
 set hlsearch
 set incsearch
-set ignorecase
-set smartcase
 " Enable syntax highlighting
 filetype off
 call pathogen#infect()
@@ -29,3 +27,5 @@ map <Leader>] <esc>:tabnext<CR>
 " Set plugin options: ctrlp
 set wildignore+=*.pyc
 set wildignore+=*_build/*
+" Set plugin options: python-mode
+let g:pymode_rope_guess_project=0
