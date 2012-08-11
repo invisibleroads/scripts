@@ -16,8 +16,6 @@ set shiftround
 " Define search behavior
 set hlsearch
 set incsearch
-" Define display behavior
-set wrap
 " Remap window movement keys
 map <c-j> <c-w>j
 map <c-k> <c-w>k
