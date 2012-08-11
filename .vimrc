@@ -1,12 +1,3 @@
-" Define tab behavior
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
-set shiftround
-" Define search behavior
-set hlsearch
-set incsearch
 " Enable syntax highlighting
 filetype off
 call pathogen#infect()
@@ -16,6 +7,17 @@ syntax on
 autocmd BufRead,BufNewFile *.py_tmpl setfiletype python
 autocmd BufRead,BufNewFile *.mako setfiletype html
 autocmd BufRead,BufNewFile *.mako_tmpl setfiletype html
+" Define tab behavior
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set shiftround
+" Define search behavior
+set hlsearch
+set incsearch
+" Define display behavior
+set wrap
 " Remap window movement keys
 map <c-j> <c-w>j
 map <c-k> <c-w>k
