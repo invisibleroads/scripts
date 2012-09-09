@@ -7,13 +7,14 @@ syntax on
 autocmd BufRead,BufNewFile *.py_tmpl setfiletype python
 autocmd BufRead,BufNewFile *.mako setfiletype html
 autocmd BufRead,BufNewFile *.mako_tmpl setfiletype html
+autocmd! FileType html setlocal tabstop=2 shiftwidth=2
+autocmd! FileType python setlocal nonumber
 " Define tab behavior
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
 set shiftround
-autocmd FileType html setlocal tabstop=2 shiftwidth=2
 " Define search behavior
 set hlsearch
 set incsearch
