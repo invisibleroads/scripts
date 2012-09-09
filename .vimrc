@@ -4,9 +4,9 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 syntax on
-autocmd BufRead,BufNewFile *.py_tmpl setfiletype python
-autocmd BufRead,BufNewFile *.mako setfiletype html
-autocmd BufRead,BufNewFile *.mako_tmpl setfiletype html
+autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
+autocmd BufRead,BufNewFile *.mako set filetype=html
+autocmd BufRead,BufNewFile *.mako_tmpl set filetype=html
 autocmd! FileType html setlocal tabstop=2 shiftwidth=2
 autocmd! FileType python setlocal nonumber
 " Define tab behavior
