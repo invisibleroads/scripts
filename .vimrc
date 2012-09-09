@@ -13,6 +13,7 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set shiftround
+autocmd FileType html setlocal tabstop=2 shiftwidth=2
 " Define search behavior
 set hlsearch
 set incsearch
