@@ -4,6 +4,8 @@ if [ -f /etc/bashrc ]; then
 fi
 # User specific aliases and functions
 cc() {
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
     workon crosscompute
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
