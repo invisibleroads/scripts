@@ -2,8 +2,8 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
-# User specific aliases and functions
-c() {
+# Enter virtual environment
+v() {
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/bin/virtualenvwrapper.sh
     workon crosscompute
@@ -14,3 +14,7 @@ c() {
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/opt/cuda/lib
     export CUDA_ROOT=$VIRTUAL_ENV/opt/cuda
 }
+# Start IPython
+i() {v; ipython}
+# Start IPython notebook
+n() {v; ipython notebook --pylab=inline}
