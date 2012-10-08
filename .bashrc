@@ -15,6 +15,6 @@ v() {
     export CUDA_ROOT=$VIRTUAL_ENV/opt/cuda
 }
 # Start IPython
-i() {v; ipython}
+i() { v; ipython }
 # Start IPython notebook
-n() {v; ipython notebook --pylab=inline}
+n() { v; ipython notebook --pylab=inline }
