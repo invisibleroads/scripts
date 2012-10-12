@@ -9,7 +9,7 @@ do
     echo 'cp '$filename $HOME
 done
 
-for filename in clean git-pull git-status grep- grep- invert-display minify-js.py grub2-windows ssh-
+for filename in clean dim git-pull git-status grep- grub2-windows invert-display minify-js.py ssh-
 do
     cp $filename $SCRIPTS
     chmod a+x $filename
