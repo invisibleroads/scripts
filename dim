@@ -1,0 +1,1 @@
+sudo sh -c 'echo -n 3 > /sys/class/backlight/acpi_video0/brightness'
