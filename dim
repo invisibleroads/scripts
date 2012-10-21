@@ -1,1 +1,3 @@
-sudo sh -c 'echo -n 3 > /sys/class/backlight/acpi_video0/brightness'
+sudo sh -c 'echo -n 1 > /sys/class/backlight/acpi_video0/brightness'
+sudo sh -c 'echo -n 1 > /sys/class/backlight/acpi_video1/brightness'
+sudo sh -c 'echo -n 574 > /sys/class/backlight/intel_backlight/brightness'
