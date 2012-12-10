@@ -7,7 +7,7 @@ syntax on
 autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
 autocmd BufRead,BufNewFile *.mako set filetype=html
 autocmd BufRead,BufNewFile *.mako_tmpl set filetype=html
-autocmd! FileType html,css,js setlocal tabstop=2 shiftwidth=2
+autocmd! FileType html,css,javascript setlocal tabstop=2 shiftwidth=2
 autocmd! FileType python setlocal nonumber
 " Define tab behavior
 set tabstop=4
