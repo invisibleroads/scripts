@@ -2,6 +2,9 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+# Add aliases
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
 # Enter virtual environment
 v() {
     export WORKON_HOME=$HOME/.virtualenvs
