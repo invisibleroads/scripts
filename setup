@@ -27,5 +27,5 @@ git clone https://github.com/klen/python-mode.git
 git clone https://github.com/Raimondi/delimitMate.git
 
 if [ -n "$1" ]; then
-    sed -i 's/^workon crosscompute/workon $1/' .bashrc
+    sed -i 's/^workon crosscompute/workon $1/' $HOME/.bashrc
 fi
