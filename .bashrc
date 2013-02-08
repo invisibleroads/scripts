@@ -2,6 +2,10 @@
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
+# Define environment variables
+export PATH=$PATH:$HOME/.scripts
+export EDITOR=vim
+export PROJECTS=$HOME/Projects
 # Add aliases
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'

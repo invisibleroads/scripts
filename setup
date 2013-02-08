@@ -3,13 +3,13 @@ if [ ! -e $SCRIPTS ]; then
     mkdir $SCRIPTS
 fi
 
-for filename in .bash_profile .bashrc .gvimrc .pylintrc .vimrc
+for filename in .bashrc .gvimrc .pylintrc .vimrc
 do
     cp $filename $HOME
     echo 'cp '$filename $HOME
 done
 
-for filename in clean dim git-pull git-status grep- grub2-windows invert-display minify-js.py ssh-
+for filename in clean dim git-status grep- grub2-windows invert minify-js.py ssh- venv
 do
     cp $filename $SCRIPTS
     chmod a+x $filename
@@ -27,5 +27,9 @@ git clone https://github.com/klen/python-mode.git
 git clone https://github.com/Raimondi/delimitMate.git
 
 if [ -n "$1" ]; then
-    sed -i 's/^workon crosscompute/workon $1/' $HOME/.bashrc
+    VIRTUALENV=$1
+else
+    VIRTUALENV=crosscompute
 fi
+echo "Using VIRTUALENV=$VIRTUALENV"
+sed -i "s/workon .*/workon $VIRTUALENV/" $HOME/.bashrc

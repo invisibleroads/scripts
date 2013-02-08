@@ -1,0 +1,30 @@
+# Make specified virtualenv and set it as the default.
+
+BOLD=`tput bold`
+NORMAL=`tput sgr0`
+
+echo "The best way to run this script is via ${BOLD}source${NORMAL}."
+echo "source `basename $0`"
+
+if [ -z "$1" ]; then
+    echo "Please specify a name for your virtualenv." 
+    exit
+fi
+
+DISTRO=`lsb_release -si`
+if [ "Fedora" = "$DISTRO" ]; then
+    sudo yum -y install python-setuptools
+elif [ "Ubuntu" = "$DISTRO" ]; then
+    sudo apt-get install python-setuptools
+else
+    echo "Unsupported distro"
+    exit
+fi
+sudo easy_install -U virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+source virtualenvwrapper.sh
+
+VIRTUALENV=$1
+mkvirtualenv $VIRTUALENV
+workon $VIRTUALENV
+sed -i 's/workon .*/workon $VIRTUALENV/' $HOME/.bashrc
