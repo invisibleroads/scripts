@@ -9,6 +9,7 @@ export PROJECTS=$HOME/Projects
 # Add aliases
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
+alias cdp='cd -P'
 # Enter virtual environment
 v() {
     export WORKON_HOME=$HOME/.virtualenvs
