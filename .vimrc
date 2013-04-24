@@ -29,8 +29,6 @@ map <Leader>] <esc>:tabnext<CR>
 " Set plugin options: ctrlp
 set wildignore+=*.pyc
 set wildignore+=*_build/*
-" Set plugin options: python-mode
-let g:pymode_rope_guess_project=0
 " Define hierarchical folds for goals
 autocmd BufRead,BufNewFile *.goals set filetype=goals
 autocmd! FileType goals setlocal smartindent foldmethod=expr foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth) foldtext=getline(v:foldstart) fillchars=fold:\ "

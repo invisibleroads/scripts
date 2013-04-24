@@ -23,7 +23,7 @@ curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/
 cd ~/.vim/bundle
 git clone https://github.com/vim-scripts/DirDiff.vim.git 
 git clone https://github.com/kien/ctrlp.vim.git 
-git clone https://github.com/klen/python-mode.git
+git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/Raimondi/delimitMate.git
 
 if [ -n "$1" ]; then
