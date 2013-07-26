@@ -9,10 +9,10 @@ do
     echo 'cp '$filename $HOME
 done
 
-for filename in clean dim git-status grep- invert ln-pwd minify-js.py ssh- venv
+for filename in clean dim git-status grep- invert ln-pwd minify-js.py sort-photos.py ssh- venv
 do
     cp $filename $SCRIPTS
-    chmod a+x $filename
+    chmod a+x $SCRIPTS/$filename
     echo 'cp '$filename $SCRIPTS
 done
 
