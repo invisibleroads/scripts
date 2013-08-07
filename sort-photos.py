@@ -8,7 +8,7 @@
 import datetime
 import os
 import shutil
-import subprocess
+# import subprocess
 import sys
 from PIL import Image
 from PIL.ExifTags import TAGS
@@ -90,8 +90,9 @@ def is_same(sourcePath, targetPath):
     if not os.path.exists(targetPath):
         return False
     if os.path.getsize(sourcePath) == os.path.getsize(targetPath):
-        commandArgs = ['cmp', '--silent', sourcePath, targetPath]
-        return not subprocess.call(commandArgs)
+        # commandArgs = ['cmp', '--silent', sourcePath, targetPath]
+        # return not subprocess.call(commandArgs)
+        return True
     return False
 
 
