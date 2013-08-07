@@ -74,7 +74,7 @@ def get_timestamp(path):
     else:
         exif = {TAGS[k]: v for k, v in image._getexif().items() if k in TAGS}
         return datetime.datetime.strptime(exif['DateTime'], '%Y:%m:%d %H:%M:%S')
-    modificationTime = os.path.getmtime(sourcePath)
+    modificationTime = os.path.getmtime(path)
     return datetime.datetime.fromtimestamp(modificationTime)
 
 
