@@ -69,13 +69,15 @@ def get_targetPath(sourcePath):
 def get_timestamp(path):
     try:
         image = Image.open(path)
-    except IOError:
-        pass
-    else:
         exif = {TAGS[k]: v for k, v in image._getexif().items() if k in TAGS}
-        return datetime.datetime.strptime(exif['DateTime'], '%Y:%m:%d %H:%M:%S')
-    modificationTime = os.path.getmtime(path)
-    return datetime.datetime.fromtimestamp(modificationTime)
+    except (IOError, AttributeError):
+        modificationTime = os.path.getmtime(path)
+        return datetime.datetime.fromtimestamp(modificationTime)
+    try:
+        timestamp = exif['DateTime']
+    except KeyError:
+        timestamp = exif['DateTimeOriginal']
+    return datetime.datetime.strptime(timestamp, '%Y:%m:%d %H:%M:%S')
 
 
 def make_targetPathGenerator(targetPath):
