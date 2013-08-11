@@ -68,16 +68,31 @@ def get_targetPath(sourcePath):
 
 def get_timestamp(path):
     try:
-        image = Image.open(path)
-        exif = {TAGS[k]: v for k, v in image._getexif().items() if k in TAGS}
-    except (IOError, AttributeError):
+        timestamp = get_timestamp_from_image(path)
+        return datetime.datetime.strptime(timestamp, '%Y:%m:%d %H:%M:%S')
+    except ImageError:
         modificationTime = os.path.getmtime(path)
         return datetime.datetime.fromtimestamp(modificationTime)
+
+
+def get_timestamp_from_image(path):
+    try:
+        image = Image.open(path)
+    except IOError:
+        raise ImageError
+    try:
+        exif = {TAGS[k]: v for k, v in image._getexif().items() if k in TAGS}
+    except AttributeError:
+        raise ImageError
     try:
         timestamp = exif['DateTime']
     except KeyError:
+        pass
+    try:
         timestamp = exif['DateTimeOriginal']
-    return datetime.datetime.strptime(timestamp, '%Y:%m:%d %H:%M:%S')
+    except KeyError:
+        raise ImageError
+    return timestamp
 
 
 def make_targetPathGenerator(targetPath):
@@ -96,6 +111,10 @@ def is_same(sourcePath, targetPath):
         # return not subprocess.call(commandArgs)
         return True
     return False
+
+
+class ImageError(Exception):
+    pass
 
 
 class DuplicateError(Exception):
