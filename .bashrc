@@ -10,6 +10,8 @@ export PROJECTS=$HOME/Projects
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
 alias cdp='cd -P'
+# Configure terminal
+stty stop undef
 # Enter virtual environment
 v() {
     export WORKON_HOME=$HOME/.virtualenvs
