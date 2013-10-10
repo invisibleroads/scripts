@@ -3,7 +3,7 @@ if [ ! -e $SCRIPTS ]; then
     mkdir $SCRIPTS
 fi
 
-for filename in .bashrc .gvimrc .vimrc
+for filename in .bashrc .gvimrc .tmux.conf .vimrc
 do
     cp $filename $HOME
     echo 'cp '$filename $HOME
