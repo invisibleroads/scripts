@@ -28,9 +28,9 @@ git clone https://github.com/vim-scripts/DirDiff.vim.git
 git clone https://github.com/tmhedberg/SimpylFold.git
 
 if [ -n "$1" ]; then
-    VIRTUALENV=$1
+    ENV_NAME=$1
 else
-    VIRTUALENV=crosscompute
+    ENV_NAME=crosscompute
 fi
-echo "Using VIRTUALENV=$VIRTUALENV"
-sed -i "s/workon .*/workon $VIRTUALENV/" $HOME/.bashrc
+echo "Using ENV_NAME=$ENV_NAME"
+sed -i "s/workon .*/workon $ENV_NAME/" $HOME/.bashrc
