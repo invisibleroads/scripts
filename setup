@@ -1,12 +1,12 @@
-SCRIPTS=$HOME/.scripts
+SCRIPTS=~/.scripts
 if [ ! -e $SCRIPTS ]; then
     mkdir $SCRIPTS
 fi
 
 for filename in .bashrc .gvimrc .tmux.conf .vimrc
 do
-    cp $filename $HOME
-    echo 'cp '$filename $HOME
+    cp $filename ~
+    echo 'cp '$filename ~
 done
 
 for filename in clean dim git-status grep- invert ln-pwd minify-js.py sort-photos.py ssh- venv
@@ -23,9 +23,10 @@ curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/
 cd ~/.vim/bundle
 git clone --depth=1 https://github.com/scrooloose/syntastic.git
 git clone --depth=1 https://github.com/Raimondi/delimitMate.git
+git clone --depth=1 https://github.com/tmhedberg/SimpylFold.git
 git clone --depth=1 https://github.com/kien/ctrlp.vim.git 
 git clone --depth=1 https://github.com/vim-scripts/DirDiff.vim.git 
-git clone --depth=1 https://github.com/tmhedberg/SimpylFold.git
+git clone --depth=1 https://github.com/ivanov/vim-ipython.git
 
 if [ -n "$1" ]; then
     ENV_NAME=$1
@@ -33,4 +34,8 @@ else
     ENV_NAME=crosscompute
 fi
 echo "Using ENV_NAME=$ENV_NAME"
-sed -i "s/workon .*/workon $ENV_NAME/" $HOME/.bashrc
+sed -i "s/workon .*/workon $ENV_NAME/" ~/.bashrc
+
+if [ -e ~/.scripts/patch-scripts.sh ]; then
+    bash ~/.scripts/patch-scripts.sh
+fi
