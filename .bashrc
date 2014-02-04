@@ -32,5 +32,5 @@ i() {
 # Start IPython notebook
 n() {
     v
-    ipython notebook --pylab=inline
+    ipython notebook
 }
