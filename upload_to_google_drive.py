@@ -14,6 +14,7 @@ from pprint import pprint
 APPLICATION_NAME = os.path.splitext(os.path.basename(__file__))[0]
 CONFIG_FOLDER = os.path.expanduser('~/.invisibleroads')
 CONFIG_NAME = 'default.cfg'
+MIME_TYPE = 'application/octet-stream'
 SERVICE_PACK_BY_NAME = {
     'calendar': ('https://www.googleapis.com/auth/calendar', 'v3'),
     'drive': ('https://www.googleapis.com/auth/drive', 'v2'),
@@ -21,10 +22,8 @@ SERVICE_PACK_BY_NAME = {
 
 
 def run(source_path, drive_service):
-    mime_type = mimetypes.guess_type(source_path)[0]
-    body = dict(
-        title=os.path.basename(source_path),
-        mime_type=mime_type)
+    mime_type = mimetypes.guess_type(source_path)[0] or MIME_TYPE
+    body = dict(title=os.path.basename(source_path), mime_type=mime_type)
     media_body = MediaFileUpload(
         source_path, mimetype=mime_type, resumable=True)
     return drive_service.files().insert(
