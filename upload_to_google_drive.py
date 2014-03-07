@@ -21,8 +21,8 @@ SERVICE_PACK_BY_NAME = {
 }
 
 
-def run(source_path, drive_service):
-    mime_type = mimetypes.guess_type(source_path)[0] or MIME_TYPE
+def run(source_path, drive_service, mime_type):
+    mime_type = mime_type or mimetypes.guess_type(source_path)[0] or MIME_TYPE
     body = dict(title=os.path.basename(source_path), mime_type=mime_type)
     media_body = MediaFileUpload(
         source_path, mimetype=mime_type, resumable=True)
@@ -77,6 +77,9 @@ if __name__ == '__main__':
     argument_parser.add_argument(
         '-c', '--config_folder', metavar='FOLDER', default=CONFIG_FOLDER,
         help='configuration folder, e.g. %s' % CONFIG_FOLDER)
+    argument_parser.add_argument(
+        '-m', '--mime_type', metavar='MIME_TYPE',
+        help='mime_type override')
     arguments = argument_parser.parse_args()
 
     config_path = os.path.join(arguments.config_folder, CONFIG_NAME)
@@ -88,4 +91,4 @@ if __name__ == '__main__':
         'drive', arguments.config_folder, client_id, client_secret)
 
     for source_path in arguments.source_paths:
-        pprint(run(source_path, drive_service))
+        pprint(run(source_path, drive_service, arguments.mime_type))
