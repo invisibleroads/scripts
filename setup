@@ -9,7 +9,7 @@ do
     echo 'cp '$filename ~
 done
 
-for filename in clean dim git-status grep- invert ln-pwd minify-js.py sort-photos.py ssh- upload_to_google_drive.py venv
+for filename in clean dim disable-backlight git-status grep- invert ln-pwd minify-js.py sort-photos.py ssh- upload_to_google_drive.py venv
 do
     cp $filename $SCRIPTS
     chmod a+x $SCRIPTS/$filename
