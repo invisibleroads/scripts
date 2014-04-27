@@ -7,6 +7,7 @@ export PS1="[\u@\h \W]\$ "
 export PATH=$PATH:~/.scripts:~/bin
 export EDITOR=vim
 export PROJECTS=~/Projects
+export VIRTUALENVWRAPPER_PYTHON=`which python2.7`
 # Add aliases
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
