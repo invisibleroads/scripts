@@ -3,7 +3,7 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 # Define environment variables
-export PS1=[\u@\h \W]\$
+export PS1="[\u@\h \W]\$"
 export PATH=$PATH:$HOME/.scripts
 export EDITOR=vim
 export PROJECTS=$HOME/Projects
