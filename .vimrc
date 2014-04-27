@@ -8,7 +8,7 @@ autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
 autocmd BufRead,BufNewFile *.mako,*.mako_tmpl set filetype=html
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd! FileType python setlocal nonumber
-autocmd! FileType html,xhtml,css,javascript,json setlocal tabstop=2 shiftwidth=2
+autocmd! FileType html,htmldjango,xhtml,css,javascript,json setlocal tabstop=2 shiftwidth=2
 " Define tab behavior
 set tabstop=4
 set shiftwidth=4
