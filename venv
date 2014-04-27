@@ -27,4 +27,4 @@ source virtualenvwrapper.sh
 VIRTUALENV=$1
 mkvirtualenv $VIRTUALENV
 workon $VIRTUALENV
-sed -i 's/workon .*/workon $VIRTUALENV/' $HOME/.bashrc
+sed -i 's/workon .*/workon $VIRTUALENV/' ~/.bashrc

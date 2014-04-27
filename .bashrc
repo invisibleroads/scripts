@@ -4,9 +4,9 @@ if [ -f /etc/bashrc ]; then
 fi
 # Define environment variables
 export PS1="[\u@\h \W]\$ "
-export PATH=$PATH:$HOME/.scripts
+export PATH=$PATH:~/.scripts:~/bin
 export EDITOR=vim
-export PROJECTS=$HOME/Projects
+export PROJECTS=~/Projects
 # Add aliases
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
@@ -16,7 +16,7 @@ alias xclip='xclip -selection c'
 stty stop undef
 # Enter virtual environment
 v() {
-    export WORKON_HOME=$HOME/.virtualenvs
+    export WORKON_HOME=~/.virtualenvs
     source virtualenvwrapper.sh
     workon crosscompute
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib
