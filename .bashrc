@@ -14,7 +14,9 @@ alias ls='ls --color=auto'
 alias cdp='cd -P'
 alias xclip='xclip -selection c'
 # Configure terminal
-stty stop undef
+if [ -t 0 ]; then
+    stty stop undef
+fi
 # Enter virtual environment
 v() {
     export WORKON_HOME=~/.virtualenvs
