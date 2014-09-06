@@ -22,7 +22,7 @@ v() {
     export WORKON_HOME=~/.virtualenvs
     source virtualenvwrapper.sh
     workon crosscompute
-    export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib;/usr/local/lib
+    export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
     # Add CUDA support
     # export PATH=$PATH:/usr/local/cuda/bin
