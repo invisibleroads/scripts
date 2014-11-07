@@ -25,17 +25,15 @@ v() {
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
     # Add CUDA support
-    # export PATH=$PATH:/usr/local/cuda/bin
-    # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
-    # export CUDA_ROOT=/usr/local/cuda
+    export CUDA_ROOT=/usr/local/cuda
+    export PATH=$PATH:$CUDA_ROOT/bin
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
 }
 # Start IPython
 i() {
-    v
-    ipython
+    v; ipython
 }
 # Start IPython notebook
 n() {
-    v
-    ipython notebook
+    v; ipython notebook
 }
