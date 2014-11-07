@@ -1,0 +1,1 @@
+xcalib -invert -alter
