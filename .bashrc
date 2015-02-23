@@ -19,9 +19,14 @@ if [ -t 0 ]; then
 fi
 # Enter virtual environment
 v() {
+    l; workon crosscompute
+}
+p() {
+    l; workon python3
+}
+l() {
     export WORKON_HOME=~/.virtualenvs
     source virtualenvwrapper.sh
-    workon crosscompute
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
     # Add CUDA support
