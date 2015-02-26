@@ -19,14 +19,18 @@ if [ -t 0 ]; then
 fi
 # Enter virtual environment
 v() {
-    l; workon crosscompute
-}
-p() {
-    l; workon python3
-}
-l() {
     export WORKON_HOME=~/.virtualenvs
     source virtualenvwrapper.sh
+    workon crosscompute
+    l
+}
+p() {
+    export WORKON_HOME=~/.virtualenvs
+    source virtualenvwrapper.sh
+    workon python3
+    l
+}
+l() {
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
     # Add CUDA support
@@ -34,11 +38,9 @@ l() {
     export PATH=$PATH:$CUDA_ROOT/bin
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
 }
-# Start IPython
 i() {
     v; ipython
 }
-# Start IPython notebook
 n() {
     v; ipython notebook
 }
