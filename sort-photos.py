@@ -69,7 +69,10 @@ def get_targetPath(sourcePath):
 def get_timestamp(path):
     try:
         timestamp = get_timestamp_from_image(path)
-        return datetime.datetime.strptime(timestamp, '%Y:%m:%d %H:%M:%S')
+        try:
+            return datetime.datetime.strptime(timestamp, '%Y:%m:%d %H:%M:%S')
+        except ValueError
+            return datetime.datetime.strptime(timestamp, '%d/%m/%Y %H:%M:%S')
     except ImageError:
         modificationTime = os.path.getmtime(path)
         return datetime.datetime.fromtimestamp(modificationTime)
