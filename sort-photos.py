@@ -72,7 +72,7 @@ def get_timestamp(path):
         try:
             return datetime.datetime.strptime(timestamp, '%Y:%m:%d %H:%M:%S')
         except ValueError:
-            return datetime.datetime.strptime(timestamp, '%d/%m/%Y %H:%M:%S')
+            return datetime.datetime.strptime(timestamp, '%d/%m/%Y %H:%M')
     except ImageError:
         modificationTime = os.path.getmtime(path)
         return datetime.datetime.fromtimestamp(modificationTime)
