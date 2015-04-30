@@ -16,8 +16,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'davidhalter/jedi-vim'
     let g:jedi#popup_on_dot = 0
 Plugin 'Raimondi/delimitMate'
-Plugin 'tmhedberg/SimpylFold'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim'
     set wildignore+=*.pyc
     set wildignore+=*.egg-info
@@ -39,7 +42,7 @@ fun! <SID>StripTrailingWhitespace()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
+autocmd BufWritePre *.md :call <SID>StripTrailingWhitespace()
 
 " Define hierarchical folds for goals
 autocmd BufRead,BufNewFile *.goals set filetype=goals
