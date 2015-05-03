@@ -9,7 +9,7 @@ do
     echo 'cp '$filename ~
 done
 
-for filename in clean disable-backlight git-status grep- put-key.sh venv *.py
+for filename in clean disable-backlight git-status grep- pause-lock.sh put-key.sh venv *.py
 do
     cp $filename $SCRIPTS
     chmod a+x $SCRIPTS/$filename

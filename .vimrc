@@ -15,6 +15,7 @@ Plugin 'scrooloose/syntastic'
     let g:syntastic_loc_list_height=3
 Plugin 'davidhalter/jedi-vim'
     let g:jedi#popup_on_dot = 0
+    let g:jedi#show_call_signatures = 0
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
