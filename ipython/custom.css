@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+#site {
+  height: 100%;
+}
+#notebook {
+  padding-top: 0;
+}
+#notebook-container {
+  padding: 0;
+}
