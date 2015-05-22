@@ -1,9 +1,16 @@
+div.cell {
+  border: 0;
+}
+div.cell.selected {
+  border: thin solid yellow;
+}
 .container {
   width: 100%;
   height: 100%;
 }
-#site {
-  height: 100%;
+.prompt {
+  min-width: 0;
+  padding: 0.4em 0em;
 }
 #notebook {
   padding-top: 0;

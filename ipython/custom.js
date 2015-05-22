@@ -1,9 +1,12 @@
 $([IPython.events]).on('app_initialized.NotebookApp', function () {
-  $('#maintoolbar').hide();
+  $(window).resize(function() {
+    $('#site').height('100%');
+  });
   setTimeout(function() {
     $('#site').height('100%');
-  }, 500);
+  }, 1000);
   setTimeout(function() {
     $('#header').hide();
   }, 5000);
+  $('#maintoolbar').hide();
 });
