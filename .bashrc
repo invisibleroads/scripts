@@ -4,7 +4,7 @@ if [ -f /etc/bashrc ]; then
 fi
 # Define environment variables
 export PS1="[\u@\h \W]\$ "
-export PATH=$PATH:~/.scripts:~/bin
+export PATH=~/.scripts:$PATH
 export EDITOR=vim
 export PROJECTS=~/Projects
 export VIRTUALENVWRAPPER_PYTHON=`which python2.7`
@@ -35,7 +35,7 @@ l() {
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
     # Add CUDA support
     export CUDA_ROOT=/usr/local/cuda
-    export PATH=$PATH:$CUDA_ROOT/bin
+    export PATH=$CUDA_ROOT/bin:$PATH
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
 }
 i() {
