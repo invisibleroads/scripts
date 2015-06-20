@@ -25,6 +25,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim'
     set wildignore+=*.pyc
     set wildignore+=*.egg-info
+Plugin 'chase/vim-ansible-yaml'
 
 call vundle#end()
 filetype plugin indent on
@@ -34,7 +35,7 @@ syntax on
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
 autocmd BufRead,BufNewFile *.mako,*.mako_tmpl set filetype=html
-autocmd! FileType html,xhtml,css,javascript,json setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd! FileType html,xhtml,css,javascript,json,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Strip trailing whitespace
 fun! <SID>StripTrailingWhitespace()
