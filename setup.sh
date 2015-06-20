@@ -1,3 +1,5 @@
+#!/bin/bash
+
 SCRIPTS=~/.scripts
 if [ ! -e $SCRIPTS ]; then
     mkdir $SCRIPTS
