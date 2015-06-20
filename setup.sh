@@ -31,7 +31,7 @@ if [ -e ~/.scripts/patch-scripts.sh ]; then
 fi
 
 git clone --depth=1 https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall now
+vim +PluginInstall +qall now &>/dev/null
 
 IPYTHON_CUSTOM_FOLDER=~/.ipython/profile_default/static/custom
 mkdir -p $IPYTHON_CUSTOM_FOLDER
