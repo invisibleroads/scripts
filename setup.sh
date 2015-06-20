@@ -24,7 +24,7 @@ else
     ENV_NAME=crosscompute
 fi
 echo "Using ENV_NAME=$ENV_NAME"
-sed -i "s/workon crosscompute/workon $ENV_NAME/" ~/.bashrc
+sed -i "s/.virtualenvs\/crosscompute/.virtualenvs\/$ENV_NAME/" ~/.bashrc
 
 if [ -e ~/.scripts/patch-scripts.sh ]; then
     bash ~/.scripts/patch-scripts.sh

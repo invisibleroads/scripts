@@ -1,5 +1,4 @@
 # Make specified virtualenv and set it as the default.
-
 BOLD=`tput bold`
 NORMAL=`tput sgr0`
 
