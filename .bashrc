@@ -36,5 +36,5 @@ i() {
     v; ipython
 }
 n() {
-    v; ipython notebook
+    v; jupyter notebook
 }
