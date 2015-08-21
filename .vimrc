@@ -36,6 +36,7 @@ autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
 autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
 autocmd! FileType html,xhtml,css,javascript,json,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd! FileType nginx setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " Strip trailing whitespace
 fun! <SID>StripTrailingWhitespace()
