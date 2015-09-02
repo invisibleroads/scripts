@@ -10,6 +10,7 @@ import os
 import shutil
 # import subprocess
 import sys
+from os.path import realpath
 from PIL import Image
 from PIL.ExifTags import TAGS
 
@@ -48,13 +49,15 @@ def is_not_media(fileName):
         return True
     if fileName.endswith('.thm'):
         return True
+    if fileName.startswith('.thumbdata'):
+        return True
     return False
 
 
 def get_targetPath(sourcePath):
     timestamp = get_timestamp(sourcePath)
     timestampFolder = timestamp.strftime('%Y/%m')
-    sourceName = os.path.basename(sourcePath)
+    sourceName = os.path.basename(sourcePath).strip()
     targetPath = os.path.join(targetFolder, timestampFolder, sourceName)
     if is_same(sourcePath, targetPath):
         raise DuplicateError(targetPath)
@@ -109,11 +112,9 @@ def make_targetPathGenerator(targetPath):
 def is_same(sourcePath, targetPath):
     if not os.path.exists(targetPath):
         return False
-    if os.path.getsize(sourcePath) == os.path.getsize(targetPath):
-        # commandArgs = ['cmp', '--silent', sourcePath, targetPath]
-        # return not subprocess.call(commandArgs)
-        return True
-    return False
+    if os.path.getsize(sourcePath) != os.path.getsize(targetPath):
+        return False
+    return True
 
 
 class ImageError(Exception):
@@ -126,7 +127,6 @@ class DuplicateError(Exception):
 
 if __name__ == '__main__':
     sourceFolder, targetFolder = sys.argv[1:]
-    if sourceFolder == targetFolder:
-        print 'Source and target folders are the same!'
-        sys.exit(1)
+    if realpath(sourceFolder) == realpath(targetFolder):
+        sys.exit('Source and target folders must be different')
     sort_photos(sourceFolder, targetFolder)
