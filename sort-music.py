@@ -56,7 +56,7 @@ def sort_music(source_folder, target_folder):
 
 def get_target_path(source_path):
     timestamp = get_timestamp(source_path)
-    timestamp_folder = timestamp.stftime('%Y/%m')
+    timestamp_folder = timestamp.strftime('%Y/%m')
     target_name = BRACKET_PREFIX_PATTERN.sub('', basename(source_path)).strip()
     target_path = join(target_folder, timestamp_folder, target_name)
     if is_same(source_path, target_path):
