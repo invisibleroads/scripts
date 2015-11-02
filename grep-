@@ -1,1 +1,1 @@
-grep -n "$@" * -R | grep -v ^.git | grep -v \/.git
+grep -n "$@" * -R | grep -v ^.git | grep -v \/.git | grep -v \.swp
