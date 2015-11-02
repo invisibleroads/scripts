@@ -9,7 +9,7 @@ from argparse import ArgumentParser
 
 
 def print_dictionary(d):
-    for key, value in d.iteritems():
+    for key, value in d.items():
         print '%s: %s' % (key, value)
 
 
