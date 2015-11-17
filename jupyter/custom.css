@@ -2,7 +2,7 @@ div.cell {
   border: 0;
 }
 div.cell.selected {
-  border: thin solid yellow;
+  border: thin solid;
 }
 .container {
   width: 100%;
@@ -11,6 +11,9 @@ div.cell.selected {
 .prompt {
   min-width: 0;
   padding: 0.4em 0em;
+}
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 8px solid black !important;
 }
 #notebook {
   padding-top: 0;

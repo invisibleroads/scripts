@@ -32,6 +32,6 @@ fi
 git clone --depth=1 https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall now &>/dev/null
 
-IPYTHON_CUSTOM_FOLDER=~/.ipython/profile_default/static/custom
-mkdir -p $IPYTHON_CUSTOM_FOLDER
-cp ipython/custom.* $IPYTHON_CUSTOM_FOLDER
+JUPYTER_CUSTOM_FOLDER=~/.jupyter/custom
+mkdir -p $JUPYTER_CUSTOM_FOLDER
+cp jupyter/custom.* $JUPYTER_CUSTOM_FOLDER
