@@ -7,6 +7,6 @@ $([IPython.events]).on('app_initialized.NotebookApp', function () {
   }, 1000);
   setTimeout(function() {
     $('#header').hide();
-  }, 5000);
+  }, 10000);
   $('#maintoolbar').hide();
 });
