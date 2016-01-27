@@ -1,5 +1,5 @@
 #!/bin/bash
 MENU_ENTRY=`grep menuentry /boot/grub2/grub.cfg  | grep --line-number Windows`
 MENU_NUMBER=$(( `echo $MENU_ENTRY | sed -e "s/:.*//"` - 1 ))
-sudo grub-reboot $MENU_NUMBER
+sudo grub2-reboot $MENU_NUMBER
 sudo reboot
