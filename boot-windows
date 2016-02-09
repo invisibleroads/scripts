@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ `readlink /boot/grub2/grubenv` == "/boot/efi/EFI/fedora/grubenv" ]; then
+    sudo mv /boot/grub2/grubenv /boot/grub2/grubenv-original
+    sudo ln -s ../efi/EFI/fedora/grubenv /boot/grub2/grubenv
+fi
+MENU_ENTRY=`grep ^menuentry /boot/grub2/grub.cfg  | grep --line-number Windows`
+MENU_NUMBER=$(( `echo $MENU_ENTRY | sed -e "s/:.*//"` - 1 ))
+sudo grub2-reboot $MENU_NUMBER
+sudo reboot
