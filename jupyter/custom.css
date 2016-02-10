@@ -16,7 +16,7 @@ div.cell.selected {
   border-left: 8px solid black !important;
 }
 #notebook {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 #notebook-container {
   padding: 0;
