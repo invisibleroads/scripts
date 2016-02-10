@@ -27,6 +27,7 @@ Plugin 'kien/ctrlp.vim'
     set wildignore+=*.pyc
     set wildignore+=*.egg-info
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'will133/vim-dirdiff'
 
 call vundle#end()
 filetype plugin indent on
