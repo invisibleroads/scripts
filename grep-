@@ -1,1 +1,5 @@
-grep -n "$@" * -R | grep -v ^.git | grep -v \/.git | grep -v \.swp
+# Exclude binary files
+# Show line numbers
+# Search recursively and follow symbolic links
+# Exclude specific folders and files
+grep -InR --exclude-dir=.git --exclude-dir=*.egg-info "$@" *
