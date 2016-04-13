@@ -23,6 +23,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'kien/ctrlp.vim'
     set wildignore+=*.pyc
     set wildignore+=*.egg-info
@@ -34,8 +35,7 @@ filetype plugin indent on
 syntax on
 
 " Customize file handling
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.md syn match markdownIgnore "\S_\S"
+autocmd BufRead,BufNewFile *.md set filetype=ghmarkdown
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
 autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
