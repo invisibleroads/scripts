@@ -10,7 +10,7 @@ do
     echo 'cp '$filename ~
 done
 
-for filename in boot-windows clean disable-backlight git-status grep- invert pause-lock put-key venv *.py
+for filename in boot-windows clean disable-backlight git-status grep- invert pause-lock put-key refresh-assets venv *.py
 do
     cp $filename $SCRIPTS
     chmod a+x $SCRIPTS/$filename
