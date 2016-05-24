@@ -8,8 +8,8 @@ export PATH=~/.scripts:$PATH
 export EDITOR=vim
 export PROJECTS=~/Projects
 # Add aliases
-alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'
 alias cdp='cd -P'
 # Configure terminal
 if [ -t 0 ]; then
