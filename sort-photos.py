@@ -95,7 +95,7 @@ def get_timestamp_from_image(path):
     except KeyError:
         pass
     try:
-        timestamp = exif['DateTimeOriginal']
+        timestamp = exif['DateTimeOriginal'][0]
     except KeyError:
         raise ImageError
     return timestamp
