@@ -8,8 +8,8 @@ export PATH=~/.scripts:$PATH
 export EDITOR=vim
 export PROJECTS=~/Projects
 # Add aliases
-alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'
 alias cdp='cd -P'
 # Configure terminal
 if [ -t 0 ]; then
@@ -18,7 +18,11 @@ fi
 # Enter virtual environment
 l() {
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
+    # Go
+    export GOPATH=$VIRTUAL_ENV
+    # Node
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
+    # CUDA
     export CUDA_HOME=/usr/local/cuda
     export PATH=$CUDA_HOME/bin:$PATH
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/lib64
