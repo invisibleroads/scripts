@@ -18,12 +18,13 @@ Plugin 'davidhalter/jedi-vim'
     let g:jedi#show_call_signatures = 0
     let g:jedi#smart_auto_mappings = 0
 Plugin 'Raimondi/delimitMate'
+Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'kien/ctrlp.vim'
     set wildignore+=*.pyc
     set wildignore+=*.egg-info
