@@ -5,7 +5,7 @@ for MODULE_NAME in ${MODULE_NAMES}; do
     PYTHON_FOLDER=${ROOT_FOLDER}/${MODULE_NAME}
     mkdir -p ${PYTHON_FOLDER}/assets
     # Regenerate script files
-    SOURCE_PATH=${ROOT_FOLDER}/node_modules/${MODULE_NAME/_/-}/main.js
+    SOURCE_PATH=${ROOT_FOLDER}/node_modules/${MODULE_NAME/_/-}/index.js
     TARGET_PATH=${PYTHON_FOLDER}/assets/part.min.js
     if [ -e ${SOURCE_PATH} ]; then
         echo ${TARGET_PATH}
