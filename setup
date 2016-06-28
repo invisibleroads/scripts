@@ -18,7 +18,7 @@ do
 done
 
 if [ -n "$1" ]; then
-    ENV_NAME=$1
+    ENV_NAME=`basename $1`
 else
     ENV_NAME=crosscompute
 fi
