@@ -9,7 +9,7 @@ for MODULE_NAME in ${MODULE_NAMES}; do
     TARGET_PATH=${PYTHON_FOLDER}/assets/part.min.js
     if [ -e ${SOURCE_PATH} ]; then
         echo ${TARGET_PATH}
-        uglifyjs -c < ${SOURCE_PATH} > ${TARGET_PATH}
+        uglifyjs -c warnings=false < ${SOURCE_PATH} > ${TARGET_PATH}
     fi
     # Regenerate style files
     SOURCE_FOLDER=${ROOT_FOLDER}/sass_modules
@@ -17,6 +17,6 @@ for MODULE_NAME in ${MODULE_NAMES}; do
     TARGET_PATH=${PYTHON_FOLDER}/assets/part.min.css
     if [ -e ${SOURCE_PATH} ]; then
         echo ${TARGET_PATH}
-        sass --sourcemap=none -I ${SOURCE_FOLDER} ${SOURCE_PATH} ${TARGET_PATH}
+        sass -I ${SOURCE_FOLDER} ${SOURCE_PATH} ${TARGET_PATH}
     fi
 done
