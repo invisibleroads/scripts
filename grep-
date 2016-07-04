@@ -2,4 +2,7 @@
 # Show line numbers
 # Search recursively and follow symbolic links
 # Exclude specific folders and files
-grep -InR --exclude-dir=.git --exclude-dir=*.egg-info "$@" *
+grep -InR \
+    --exclude-dir=.git \
+    --exclude-dir=*.egg-info \
+    "$@" *
