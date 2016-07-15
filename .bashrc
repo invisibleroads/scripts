@@ -3,8 +3,10 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 # Define environment variables
+if [[ ":$PATH:" != *":$HOME/.scripts:"* ]]; then
+    export PATH=~/.scripts:$PATH
+fi
 export PS1="[\u@\h \W]\$ "
-export PATH=~/.scripts:$PATH
 export EDITOR=vim
 export PROJECTS=~/Projects
 # Add aliases
