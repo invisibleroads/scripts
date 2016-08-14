@@ -20,7 +20,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
     set wildignore+=*.pyc
     set wildignore+=*.egg-info
 Plugin 'chase/vim-ansible-yaml'
