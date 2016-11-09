@@ -31,7 +31,3 @@ fi
 
 git clone --depth=1 https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall now &>/dev/null
-
-JUPYTER_CUSTOM_FOLDER=~/.jupyter/custom
-mkdir -p $JUPYTER_CUSTOM_FOLDER
-cp jupyter/custom.* $JUPYTER_CUSTOM_FOLDER
