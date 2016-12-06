@@ -31,5 +31,12 @@ if [ -e ~/.scripts/patch-scripts.sh ]; then
     bash ~/.scripts/patch-scripts.sh
 fi
 
-git clone --depth=1 https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+VUNDLE_FOLDER=~/.vim/bundle/Vundle.vim
+if [ ! -d $VUNDLE_FOLDER ]; then
+    git clone --depth=1 https://github.com/gmarik/Vundle.vim.git $VUNDLE_FOLDER
+else
+    pushd $VUNDLE_FOLDER
+    git pull
+    popd
+fi
 vim +PluginInstall +qall now &>/dev/null
