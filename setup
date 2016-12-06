@@ -39,4 +39,4 @@ else
     git pull
     popd
 fi
-vim +PluginInstall +qall now &>/dev/null
+vim +PluginInstall +qall now &>/dev/null || true
