@@ -22,8 +22,6 @@ l() {
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
     # Go
     export GOPATH=$VIRTUAL_ENV
-    # Node
-    export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
     # CUDA
     export CUDA_HOME=/usr/local/cuda
     export PATH=$CUDA_HOME/bin:$PATH
