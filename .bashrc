@@ -6,6 +6,9 @@ fi
 if [[ ":$PATH:" != *":$HOME/.scripts:"* ]]; then
     export PATH=~/.scripts:$PATH
 fi
+if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
+    export PATH=~/bin:$PATH
+fi
 export PS1="[\u@\h \W]\$ "
 export EDITOR=vim
 export PROJECTS=~/Projects
