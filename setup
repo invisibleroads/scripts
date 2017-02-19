@@ -12,7 +12,7 @@ do
     echo 'cp '$filename ~
 done
 
-for filename in boot-windows clean disable-backlight git-status grep- refresh-assets *.py
+for filename in clean git-status grep- refresh-assets *.py
 do
     cp $filename $SCRIPTS
     chmod a+x $SCRIPTS/$filename
@@ -26,10 +26,6 @@ else
 fi
 echo "Using ENV_NAME=$ENV_NAME"
 sed -i "s/.virtualenvs\/crosscompute/.virtualenvs\/$ENV_NAME/" ~/.bashrc
-
-if [ -e ~/.scripts/patch-scripts.sh ]; then
-    bash ~/.scripts/patch-scripts.sh
-fi
 
 VUNDLE_FOLDER=~/.vim/bundle/Vundle.vim
 if [ ! -d $VUNDLE_FOLDER ]; then
