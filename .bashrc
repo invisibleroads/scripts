@@ -23,23 +23,17 @@ fi
 # Enter virtual environment
 l() {
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
-    # Go
-    export GOPATH=$VIRTUAL_ENV
-    # Node
-    export NODE_PATH=/usr/lib/node_modules
     # CUDA
     export CUDA_HOME=/usr/local/cuda
     export PATH=$CUDA_HOME/bin:$PATH
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/lib64
+    # Go
+    export GOPATH=$VIRTUAL_ENV
+    # Node
+    export NODE_PATH=/usr/lib/node_modules
 }
 v() {
     source ~/.virtualenvs/crosscompute/bin/activate; l
-}
-p() {
-    source ~/.virtualenvs/python3/bin/activate; l
-}
-b() {
-    v; bpython
 }
 i() {
     v; ipython
