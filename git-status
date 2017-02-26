@@ -6,6 +6,10 @@ find . -type d -name .git | while read G_FOLDER; do
     B=$(git status -s -b)
     if [ -n "$A" ] || [[ $B == *ahead* ]]; then
         echo -e "\e[1m$X_FOLDER\e[0m"
-        echo "$B"
+        if [[ $B == *ahead* ]]; then
+            echo "$B"
+        else
+            echo "$A"
+        fi
     fi
 done
