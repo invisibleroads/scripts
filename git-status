@@ -2,9 +2,10 @@ cd $PROJECTS
 find . -type d -name .git | while read G_FOLDER; do
     X_FOLDER=${G_FOLDER/\.git/}
     cd $PROJECTS/$X_FOLDER
-    X=$(git status -s)
-    if [ -n "$X" ]; then
+    A=$(git status -s)
+    B=$(git status -s -b)
+    if [ -n "$A" ] || [[ $B == *ahead* ]]; then
         echo -e "\e[1m$X_FOLDER\e[0m"
-        echo "$X"
+        echo "$B"
     fi
 done
