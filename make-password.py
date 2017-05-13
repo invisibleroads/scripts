@@ -27,4 +27,4 @@ if __name__ == '__main__':
     argument_parser.add_argument('--code', '-c', metavar='dlsp', default='dl')
     args = argument_parser.parse_args()
     alphabet = get_alphabet(args.code)
-    print make_random_string(alphabet, args.length)
+    print(make_random_string(alphabet, args.length))
