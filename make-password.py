@@ -1,23 +1,27 @@
 #!/usr/bin/env python
 from argparse import ArgumentParser
 from random import choice
-from string import digits, letters, punctuation
+
+
+DIGITS = '0123456789'
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+PUNCTUATION = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
 
 def make_random_string(alphabet, length):
-    return ''.join(choice(alphabet) for x in xrange(length))
+    return ''.join(choice(alphabet) for x in range(length))
 
 
 def get_alphabet(code):
     alphabet = ''
     if 'd' in code:
-        alphabet += digits
+        alphabet += DIGITS
     if 'l' in code:
-        alphabet += letters
+        alphabet += LETTERS
     if 's' in code:
         alphabet += ' '
     if 'p' in code:
-        alphabet += punctuation
+        alphabet += PUNCTUATION
     return alphabet
 
 
