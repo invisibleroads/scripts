@@ -6,13 +6,13 @@ if [ ! -e $SCRIPTS ]; then
     mkdir $SCRIPTS
 fi
 
-for filename in .bash_profile .bashrc .gvimrc .tmux.conf .vimrc
+for filename in .bash_profile .bashrc .tmux.conf .vimrc
 do
     cp $filename ~
     echo 'cp '$filename ~
 done
 
-for filename in clean git-status grep- refresh-assets *.py
+for filename in clean git-status grep-
 do
     cp $filename $SCRIPTS
     chmod a+x $SCRIPTS/$filename
