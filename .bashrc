@@ -6,9 +6,6 @@ fi
 if [[ ":$PATH:" != *":$HOME/.scripts:"* ]]; then
     export PATH=~/.scripts:$PATH
 fi
-if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
-    export PATH=~/bin:$PATH
-fi
 export PS1="[\u@\h \W]\$ "
 export EDITOR=vim
 export PROJECTS=~/Projects
@@ -16,12 +13,14 @@ export PROJECTS=~/Projects
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
 alias cdp='cd -P'
-# Configure terminal
+# If we are in a terminal, free CTRL-S and CTRL-Q
 if [ -t 0 ]; then
     stty stop undef
+    stty start undef
 fi
 # Enter virtual environment
-l() {
+v() {
+    source ~/.virtualenvs/crosscompute/bin/activate
     export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib:/usr/local/lib
     # CUDA
     export CUDA_HOME=/usr/local/cuda
@@ -31,13 +30,4 @@ l() {
     export GOPATH=$VIRTUAL_ENV
     # Node
     export NODE_PATH=/usr/lib/node_modules
-}
-v() {
-    source ~/.virtualenvs/crosscompute/bin/activate; l
-}
-i() {
-    v; ipython
-}
-n() {
-    v; jupyter notebook
 }

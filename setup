@@ -36,3 +36,7 @@ else
     popd
 fi
 vim +PluginInstall +qall now &>/dev/null || true
+
+if [ -n "$VIRTUAL_ENV" ]; then
+    pip install jedi
+fi
