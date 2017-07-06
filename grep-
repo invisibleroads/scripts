@@ -3,6 +3,7 @@
 # Search recursively and follow symbolic links
 # Exclude specific folders and files
 grep -InR \
+    --exclude=\*.min.js \
     --exclude-dir=.git \
-    --exclude-dir=*.egg-info \
+    --exclude-dir=\*.egg-info \
     "$@" *
