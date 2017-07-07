@@ -6,6 +6,7 @@ fi
 if [[ ":$PATH:" != *":$HOME/.scripts:"* ]]; then
     export PATH=~/.scripts:$PATH
 fi
+export LANG=en_US.UTF-8
 export PS1="[\u@\h \W]\$ "
 export EDITOR=vim
 export PROJECTS=~/Projects
