@@ -18,13 +18,7 @@ Plugin 'davidhalter/jedi-vim'
     let g:jedi#show_call_signatures = 0
     let g:jedi#smart_auto_mappings = 0
 Plugin 'Raimondi/delimitMate'
-Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'ctrlpvim/ctrlp.vim'
-    set wildignore+=*.pyc
-    set wildignore+=*.egg-info
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'will133/vim-dirdiff'
 
 call vundle#end()
 filetype plugin indent on
