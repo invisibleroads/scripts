@@ -12,7 +12,7 @@ do
     echo 'cp '$filename ~
 done
 
-for filename in clean git-status grep-
+for filename in clean git-status grep- *.py
 do
     cp $filename $SCRIPTS
     chmod a+x $SCRIPTS/$filename
