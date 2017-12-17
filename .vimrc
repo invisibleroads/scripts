@@ -13,10 +13,6 @@ Plugin 'scrooloose/syntastic'
     let g:syntastic_auto_loc_list=1
     let g:syntastic_check_on_wq = 0
     let g:syntastic_loc_list_height=3
-Plugin 'davidhalter/jedi-vim'
-    let g:jedi#popup_on_dot = 0
-    let g:jedi#show_call_signatures = 0
-    let g:jedi#smart_auto_mappings = 0
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tmhedberg/SimpylFold'
