@@ -15,7 +15,6 @@ Plugin 'scrooloose/syntastic'
     let g:syntastic_loc_list_height=3
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
-Plugin 'tmhedberg/SimpylFold'
 
 call vundle#end()
 filetype plugin indent on
