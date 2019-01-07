@@ -3,6 +3,9 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 # Define environment variables
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    export PATH=~/.local/bin:$PATH
+fi
 if [[ ":$PATH:" != *":$HOME/.scripts:"* ]]; then
     export PATH=~/.scripts:$PATH
 fi
