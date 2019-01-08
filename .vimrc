@@ -16,6 +16,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'will133/vim-dirdiff'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
