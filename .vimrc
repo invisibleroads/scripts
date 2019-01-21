@@ -2,17 +2,18 @@ set nocompatible
 
 " Install plugins with vundle
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'scrooloose/syntastic'
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-    let g:syntastic_auto_loc_list=1
-    let g:syntastic_check_on_wq=0
-    let g:syntastic_loc_list_height=3
+" Plugin 'scrooloose/syntastic'
+    " set statusline+=%#warningmsg#
+    " set statusline+=%{SyntasticStatuslineFlag()}
+    " set statusline+=%*
+    " let g:syntastic_auto_loc_list=1
+    " let g:syntastic_check_on_wq=0
+    " let g:syntastic_loc_list_height=3
+Plugin 'w0rp/ale'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'will133/vim-dirdiff'
@@ -33,8 +34,8 @@ autocmd! FileType ghmarkdown,nginx setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " Strip trailing whitespace
 fun! <SID>StripTrailingWhitespace()
-    let l = line(".")
-    let c = col(".")
+    let l = line('.')
+    let c = col('.')
     %s/\s\+$//e
     call cursor(l, c)
 endfun

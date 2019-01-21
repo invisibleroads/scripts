@@ -1,0 +1,19 @@
+VIRTUALENV_FOLDER=~/.virtualenvs/crosscompute
+
+if [ ! -d $VIRTUALENV_FOLDER ]; then
+    virtualenv $VIRTUALENV_FOLDER -p $(which python3)
+    source $VIRTUALENV_FOLDER/bin/activate
+fi
+
+pip install -U \
+    ansible-lint \
+    black \
+    flake8 \
+    vim-vint
+
+npm install -g \
+    bash-language-server \
+    dockerfile_lint \
+    fixjson \
+    markdownlint \
+    eslint
