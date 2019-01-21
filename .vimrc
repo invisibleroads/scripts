@@ -14,7 +14,7 @@ Plugin 'gmarik/Vundle.vim'
     " let g:syntastic_check_on_wq=0
     " let g:syntastic_loc_list_height=3
 Plugin 'w0rp/ale'
-    " let g:ale_lint_on_text_changed = 'never'
+    let g:ale_lint_on_text_changed = 'never'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'will133/vim-dirdiff'
