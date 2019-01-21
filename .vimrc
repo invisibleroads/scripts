@@ -7,14 +7,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugin 'scrooloose/syntastic'
-    " set statusline+=%#warningmsg#
-    " set statusline+=%{SyntasticStatuslineFlag()}
-    " set statusline+=%*
-    " let g:syntastic_auto_loc_list=1
-    " let g:syntastic_check_on_wq=0
-    " let g:syntastic_loc_list_height=3
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_check_on_wq=0
+" let g:syntastic_loc_list_height=3
+"
 Plugin 'w0rp/ale'
-    let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'never'
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
+
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'will133/vim-dirdiff'
