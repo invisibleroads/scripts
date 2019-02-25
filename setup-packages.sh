@@ -1,7 +1,7 @@
 VIRTUALENV_FOLDER=~/.virtualenvs/crosscompute
 
 if [ ! -d $VIRTUALENV_FOLDER ]; then
-    virtualenv $VIRTUALENV_FOLDER -p $(which python3)
+    virtualenv $VIRTUALENV_FOLDER -p $(which python3) --system-site-packages
     source $VIRTUALENV_FOLDER/bin/activate
 fi
 
