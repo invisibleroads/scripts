@@ -31,7 +31,7 @@ syntax on
 
 " Customize file handling
 autocmd BufRead,BufNewFile *.md set filetype=ghmarkdown
-autocmd BufRead,BufNewFile *.json set filetype=json
+autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
 autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
 autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
 autocmd! FileType html,xhtml,sass,scss,css,javascript,json,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
