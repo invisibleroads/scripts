@@ -13,13 +13,27 @@ fi
 source ~/.bashrc
 v
 
+for filename in .style.yapf
+do
+    cp $filename ~
+    echo 'cp '$filename ~
+done
+
+if command -v dnf; then
+    sudo dnf install -y node npm
+    sudo dnf install -y cmake gcc-c++ make python3-devel
+fi
+
+pushd ~/.vim/bundle/YouCompleteMe
+python install.py --ts-completer
+popd
+
 pip install -U \
     ansible-lint \
     black \
     flake8 \
-    vim-vint
-
-# curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+    vim-vint \
+    yapf
 
 npm install -g \
     bash-language-server \

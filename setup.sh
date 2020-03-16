@@ -27,12 +27,5 @@ fi
 echo "Using ENV_NAME=$ENV_NAME"
 sed -i "s/.virtualenvs\/crosscompute/.virtualenvs\/$ENV_NAME/" ~/.bashrc
 
-VUNDLE_FOLDER=~/.vim/bundle/Vundle.vim
-if [ ! -d $VUNDLE_FOLDER ]; then
-    git clone --depth=1 https://github.com/gmarik/Vundle.vim.git $VUNDLE_FOLDER
-else
-    pushd $VUNDLE_FOLDER
-    git pull
-    popd
-fi
-vim +PluginInstall +qall now &>/dev/null || true
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall &> /dev/null

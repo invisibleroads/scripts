@@ -1,31 +1,36 @@
 set nocompatible
 
-" Install plugins with vundle
-filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin()
 
-" Plugin 'scrooloose/syntastic'
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_check_on_wq=0
-" let g:syntastic_loc_list_height=3
-"
-Plugin 'w0rp/ale'
+Plug 'dense-analysis/ale'
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['yapf'],
+\}
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
 
-Plugin 'bling/vim-airline'
-Plugin 'Raimondi/delimitMate'
-Plugin 'will133/vim-dirdiff'
-Plugin 'pangloss/vim-javascript'
-Plugin 'MaxMEllon/vim-jsx-pretty'
+Plug 'bling/vim-airline'
+Plug 'Raimondi/delimitMate'
+Plug 'will133/vim-dirdiff'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
-call vundle#end()
+Plug 'ycm-core/YouCompleteMe'
+Plug 'davidhalter/jedi-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'valloric/MatchTagAlways'
+Plug 'tmhedberg/SimpylFold'
+Plug 'preservim/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
 filetype plugin indent on
 syntax on
 
