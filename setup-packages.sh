@@ -21,12 +21,7 @@ done
 
 if command -v dnf; then
     sudo dnf install -y node npm
-    sudo dnf install -y cmake gcc-c++ make python3-devel
 fi
-
-pushd ~/.vim/bundle/YouCompleteMe
-python install.py --ts-completer
-popd
 
 pip install -U \
     ansible-lint \

@@ -1,5 +1,3 @@
-set nocompatible
-
 call plug#begin()
 
 Plug 'dense-analysis/ale'
@@ -18,42 +16,30 @@ Plug 'will133/vim-dirdiff'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
-Plug 'ycm-core/YouCompleteMe'
-Plug 'davidhalter/jedi-vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'valloric/MatchTagAlways'
 Plug 'tmhedberg/SimpylFold'
-Plug 'preservim/nerdtree'
-Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'valloric/MatchTagAlways'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
 filetype plugin indent on
 syntax on
 
-" Customize file handling
-autocmd BufRead,BufNewFile *.md set filetype=ghmarkdown
-autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
-autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
-autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
-autocmd! FileType html,xhtml,sass,scss,css,javascript,json,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd! FileType ghmarkdown,nginx setlocal tabstop=4 shiftwidth=4 softtabstop=4
-
-" Strip trailing whitespace
-fun! <SID>StripTrailingWhitespace()
-    let l = line('.')
-    let c = col('.')
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-autocmd BufWritePre *.md :call <SID>StripTrailingWhitespace()
-
-" Define hierarchical folds for goals
-autocmd BufRead,BufNewFile *.goals set filetype=goals
-autocmd! FileType goals setlocal smartindent foldmethod=expr foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth) foldtext=getline(v:foldstart) fillchars=fold:\ "
+augroup invisibleroads_scripts
+    autocmd!
+    autocmd BufRead,BufNewFile *.md set filetype=ghmarkdown
+    autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
+    autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
+    autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
+    autocmd! FileType html,xhtml,sass,scss,css,javascript,json,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd! FileType ghmarkdown,nginx setlocal tabstop=4 shiftwidth=4 softtabstop=4
+    " Define hierarchical folds for goals
+    autocmd BufRead,BufNewFile *.goals set filetype=goals
+    autocmd! FileType goals setlocal smartindent foldmethod=expr foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth) foldtext=getline(v:foldstart) fillchars=fold:\ "
+augroup END
 
 " Define indent behavior
 set tabstop=4      " Convert existing tabs to 4 spaces
