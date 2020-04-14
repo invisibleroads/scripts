@@ -6,6 +6,10 @@ fi
 echo "Using ENV_NAME=$ENV_NAME"
 VIRTUALENV_FOLDER=~/.virtualenvs/$ENV_NAME
 
+if command -v dnf; then
+    sudo dnf install -y node npm python3-virtualenv
+fi
+
 if [ ! -d $VIRTUALENV_FOLDER ]; then
     virtualenv $VIRTUALENV_FOLDER -p $(which python3) --system-site-packages
     source $VIRTUALENV_FOLDER/bin/activate
@@ -18,10 +22,6 @@ do
     cp $filename ~
     echo 'cp '$filename ~
 done
-
-if command -v dnf; then
-    sudo dnf install -y node npm
-fi
 
 pip install -U \
     ansible-lint \
