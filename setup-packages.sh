@@ -7,7 +7,9 @@ echo "Using ENV_NAME=$ENV_NAME"
 VIRTUALENV_FOLDER=~/.virtualenvs/$ENV_NAME
 
 if command -v dnf; then
-    sudo dnf install -y node npm python3-virtualenv
+    command -v node || sudo dnf install -y node
+    command -v npm || sudo dnf install -y npm
+    command -v virtualenv || sudo dnf install -y python3-virtualenv
 fi
 
 if [ ! -d $VIRTUALENV_FOLDER ]; then
