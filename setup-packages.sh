@@ -19,7 +19,7 @@ fi
 source ~/.bashrc
 v
 
-for filename in .style.yapf
+for filename in .eslintrc.js .style.yapf
 do
     cp $filename ~
     echo 'cp '$filename ~
@@ -34,7 +34,12 @@ pip install -U \
 
 npm install -g \
     bash-language-server \
-    dockerfile_lint \
+    dockerfile-lint \
     eslint \
+    eslint-config-standard \
+    eslint-plugin-import \
+    eslint-plugin-node \
+    eslint-plugin-promise \
+    eslint-plugin-standard \
     fixjson \
     markdownlint
