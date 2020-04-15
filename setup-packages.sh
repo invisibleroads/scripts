@@ -34,7 +34,7 @@ pip install -U \
 
 npm install -g \
     bash-language-server \
-    dockerfile-lint \
+    dockerfile_lint \
     eslint \
     eslint-config-standard \
     eslint-plugin-import \
