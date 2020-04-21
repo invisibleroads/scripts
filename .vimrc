@@ -17,7 +17,7 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-commentary'
