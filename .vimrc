@@ -14,7 +14,10 @@ Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
 Plug 'will133/vim-dirdiff'
 Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
+
+Plug 'yuezk/vim-js'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-commentary'
@@ -34,7 +37,7 @@ augroup invisibleroads_scripts
     autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
     autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
     autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
-    autocmd! FileType html,xhtml,sass,scss,css,javascript,json,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd! FileType html,xhtml,sass,scss,css,javascript,json,typescriptreact,yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd! FileType ghmarkdown,nginx setlocal tabstop=4 shiftwidth=4 softtabstop=4
     " Define hierarchical folds for goals
     autocmd BufRead,BufNewFile *.goals set filetype=goals
