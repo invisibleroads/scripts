@@ -25,6 +25,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
