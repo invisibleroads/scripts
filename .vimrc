@@ -27,7 +27,15 @@ Plug 'valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
 Plug 'cespare/vim-toml'
 
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+" Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
+
 call plug#end()
+
+" Configure plugins
+" let g:limelight_conceal_ctermfg = 236
+" set t_Co=256  " Use limelight in tmux
 
 filetype plugin indent on
 syntax on
