@@ -1,8 +1,6 @@
 module.exports = {
   env: {
-    commonjs: true,
     es6: true,
-    node: true
   },
   extends: [
     'standard'
@@ -18,10 +16,11 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'object-curly-spacing': ['error', 'always'],
     'quotes': ['error', 'single'],
+    'quote-props': ['error', 'consistent'],
     'semi': ['error', 'never'],
     'space-before-function-paren': ['error', {
       'anonymous': 'always',
-      'named': 'never'
-    }]
+      'named': 'never',
+    }],
   }
 }
