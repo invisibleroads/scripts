@@ -15,8 +15,8 @@ module.exports = {
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     'object-curly-spacing': ['error', 'always'],
-    'quotes': ['error', 'single'],
     'quote-props': ['error', 'consistent'],
+    'quotes': ['error', 'single'],
     'semi': ['error', 'never'],
     'space-before-function-paren': ['error', {
       'anonymous': 'always',
