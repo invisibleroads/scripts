@@ -59,6 +59,9 @@ map <c-k> <c-w>k
 map <c-h> <c-w>h
 map <c-l> <c-w>l
 
+" Define backup window key for browser shells
+noremap <c-e> <c-w>
+
 " Remap tab movement keys
 map <Leader>[ <esc>:tabprevious<CR>
 map <Leader>] <esc>:tabnext<CR>
