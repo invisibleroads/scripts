@@ -60,6 +60,9 @@ map <c-k> <c-w>k
 map <c-h> <c-w>h
 map <c-l> <c-w>l
 
+" Define backup window key for browser shells
+noremap <c-e> <c-w>
+
 " Remap tab movement keys
 map <Leader>[ <esc>:tabprevious<CR>
 map <Leader>] <esc>:tabnext<CR>
@@ -74,7 +77,7 @@ augroup invisibleroads_scripts
     autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
     autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
     autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
-    autocmd! FileType html,xhtml,sass,scss,css,javascript,json,typescriptreact,yaml,nginx setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd! FileType html,xhtml,sass,scss,css,javascript,json,typescript,typescriptreact,yaml,nginx setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd! FileType ghmarkdown setlocal tabstop=4 shiftwidth=4 softtabstop=4
     " Define hierarchical folds for goals
     autocmd BufRead,BufNewFile *.goals set filetype=goals
