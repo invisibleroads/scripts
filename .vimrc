@@ -14,6 +14,7 @@ Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
 Plug 'will133/vim-dirdiff'
 Plug 'pangloss/vim-javascript'
+Plug 'beautify-web/js-beautify'
 
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
