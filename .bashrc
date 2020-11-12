@@ -13,7 +13,6 @@ export LANG=en_US.UTF-8
 export PS1="[\u@\h \W]\$ "
 export EDITOR=vim
 export PROJECTS=~/Projects
-export BROWSER=firefox
 # Add aliases
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
