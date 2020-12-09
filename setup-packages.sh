@@ -12,7 +12,10 @@ do
     echo 'cp '$filename ~
 done
 
-pip install -U \
+pip install --user \
+    trash
+
+pip install --upgrade \
     ansible-lint \
     black \
     flake8 \
