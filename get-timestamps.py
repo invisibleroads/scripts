@@ -31,4 +31,4 @@ if __name__ == '__main__':
         import pyperclip
         pyperclip.copy(timestamp_text)
     except Exception:
-        pass
+        print('pip install -U pyperclip')
