@@ -22,7 +22,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'valloric/MatchTagAlways'
 Plug 'majutsushi/tagbar'
