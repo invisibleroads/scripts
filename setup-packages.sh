@@ -27,9 +27,5 @@ npm install -g \
     dockerfile_lint \
     eslint \
     eslint-config-standard \
-    eslint-plugin-import \
-    eslint-plugin-node \
-    eslint-plugin-promise \
-    eslint-plugin-standard \
     fixjson \
     markdownlint

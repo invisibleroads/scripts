@@ -12,22 +12,21 @@ nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
 
 Plug 'bling/vim-airline'
-Plug 'Raimondi/delimitMate'
 Plug 'will133/vim-dirdiff'
 Plug 'pangloss/vim-javascript'
-Plug 'beautify-web/js-beautify'
-
-Plug 'yuezk/vim-js'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
-
 Plug 'tmhedberg/SimpylFold'
-Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
 Plug 'valloric/MatchTagAlways'
-Plug 'majutsushi/tagbar'
-Plug 'cespare/vim-toml'
+
+# Plug 'Raimondi/delimitMate'
+" Plug 'beautify-web/js-beautify'
+" Plug 'yuezk/vim-js'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-surround'
+" Plug 'majutsushi/tagbar'
+" Plug 'cespare/vim-toml'
 
 " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
