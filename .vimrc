@@ -17,7 +17,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'tmhedberg/SimpylFold'
 Plug 'valloric/MatchTagAlways'
 
-# Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
 " Plug 'beautify-web/js-beautify'
 " Plug 'yuezk/vim-js'
 " Plug 'HerringtonDarkholme/yats.vim'
