@@ -12,10 +12,10 @@ nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
 
 Plug 'bling/vim-airline'
-Plug 'will133/vim-dirdiff'
 Plug 'pangloss/vim-javascript'
 Plug 'tmhedberg/SimpylFold'
 Plug 'valloric/MatchTagAlways'
+Plug 'will133/vim-dirdiff'
 
 " Plug 'Raimondi/delimitMate'
 " Plug 'beautify-web/js-beautify'
