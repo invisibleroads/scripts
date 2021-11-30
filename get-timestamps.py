@@ -32,4 +32,4 @@ if __name__ == '__main__':
         pyperclip.copy(timestamp_text)
     except Exception:
         print('sudo dnf -y install xsel')
-        print('pip install -U pyperclip')
+        print('pip install --user pyperclip')
