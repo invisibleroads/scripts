@@ -12,13 +12,11 @@ do
     echo 'cp '$filename ~
 done
 
-pip install --user \
-    trash
-
 pip install --upgrade \
     ansible-lint \
     black \
     flake8 \
+    trash \
     vim-vint \
     yapf
 
