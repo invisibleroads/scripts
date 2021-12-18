@@ -13,8 +13,8 @@ nmap <silent> <leader>ak :ALEPrevious<cr>
 
 Plug 'bling/vim-airline'
 Plug 'pangloss/vim-javascript'
-Plug 'tmhedberg/SimpylFold'
-Plug 'valloric/MatchTagAlways'
+" Plug 'tmhedberg/SimpylFold'
+" Plug 'valloric/MatchTagAlways'
 Plug 'will133/vim-dirdiff'
 
 " Plug 'Raimondi/delimitMate'

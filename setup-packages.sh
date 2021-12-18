@@ -6,24 +6,19 @@ fi
 source ~/.bashrc
 v
 
-for filename in .eslintrc.js .style.yapf
+for filename in .eslintrc.js
 do
     cp $filename ~
     echo 'cp '$filename ~
 done
 
-pip install --upgrade \
-    ansible-lint \
-    black \
-    flake8 \
-    trash \
-    vim-vint \
-    yapf
+pip install ansible-lint
+pip install black
+pip install flake8
+pip install trash-cli
 
-npm install -g \
-    bash-language-server \
-    dockerfile_lint \
-    eslint \
-    eslint-config-standard \
-    fixjson \
-    markdownlint
+npm install -g bash-language-server
+npm install -g dockerfile_lint
+npm install -g eslint
+npm install -g fixjson
+npm install -g markdownlint
