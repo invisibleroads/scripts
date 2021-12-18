@@ -11,5 +11,5 @@ if command -v dnf; then
 fi
 
 if [ ! -d $VIRTUALENV_FOLDER ]; then
-    virtualenv $VIRTUALENV_FOLDER -p $(which python3) --system-site-packages
+    virtualenv $VIRTUALENV_FOLDER -p $(command -v python3) --system-site-packages
 fi
