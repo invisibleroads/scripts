@@ -43,8 +43,8 @@ if command -v dnf; then
 else
     X=apt
 fi
-command -v node || sudo $X install -y node
-command -v npm || sudo $X install -y npm
+command -v node || sudo $X install node -y
+command -v npm || sudo $X install npm -y
 
 source ~/.bashrc
 v
@@ -60,8 +60,8 @@ npm install -g \
     markdownlint \
     stylelint stylelint-config-standard \
     xo
-command -v hadolint || sudo $X install hadolint
-command -v yamllint || sudo $X install yamllint
+command -v hadolint || sudo $X install hadolint -y
+command -v yamllint || sudo $X install yamllint -y
 
 mkdir ~/.config/bleachbit -p
 cp bleachbit.ini ~/.config/bleachbit
