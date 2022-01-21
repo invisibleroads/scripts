@@ -1,0 +1,6 @@
+#!/bin/bash
+DEVICES=$(grep '\*enabled' /proc/acpi/wakeup | cut -d ' ' -f1)
+for DEVICE in $DEVICES; do
+    echo $DEVICE
+    echo $DEVICE > /proc/acpi/wakeup
+done

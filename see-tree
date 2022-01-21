@@ -1,0 +1,1 @@
+tree -I 'experiments|node_modules|.git|*.swp' -a

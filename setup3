@@ -1,0 +1,69 @@
+#!/bin/bash
+CONFIGURATION_PATHS="
+.eslintrc
+.gvimrc
+"
+
+SCRIPT_PATHS="
+bleach
+boot-windows
+browse-photos
+clip-file
+disable-backlight
+disable-wakeup
+encrypt-password
+prepare-playlist.py
+rank-sizes
+refresh-assets
+see-tree
+sort-music.py
+sort-photos.py
+"
+
+SCRIPTS_FOLDER=~/.scripts
+if [ ! -e $SCRIPTS_FOLDER ]; then
+    mkdir $SCRIPTS_FOLDER
+fi
+
+cd $(dirname "$0")
+
+for X in $CONFIGURATION_PATHS; do
+    cp $X ~
+    echo 'cp '$X ~
+done
+
+for X in $SCRIPT_PATHS; do
+    cp $X $SCRIPTS_FOLDER
+    chmod a+x $SCRIPTS_FOLDER/$X
+    echo 'cp '$X $SCRIPTS_FOLDER
+done
+
+if command -v dnf; then
+    X=dnf
+else
+    X=apt
+fi
+command -v node || sudo $X install -y node
+command -v npm || sudo $X install -y npm
+
+source ~/.bashrc
+v
+pip install \
+    ansible-lint \
+    black \
+    flakehell \
+    pylama
+npm install -g \
+    bash-language-server \
+    fixjson \
+    htmlhint \
+    markdownlint \
+    stylelint stylelint-config-standard \
+    xo
+command -v hadolint || sudo $X install hadolint
+command -v yamllint || sudo $X install yamllint
+
+mkdir ~/.config/bleachbit -p
+cp bleachbit.ini ~/.config/bleachbit
+
+dconf load / < gnome.properties

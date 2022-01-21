@@ -1,4 +1,4 @@
 find . -name "*.pyc" -exec rm '{}' ';'
 find . -name "*~" -exec rm '{}' ';'
-find . -name "__pycache__" -prune -exec rm -rf '{}' ';'
 find . -name ".ipynb_checkpoints" -prune -exec rm -rf '{}' ';'
+find . -name "__pycache__" -prune -exec rm -rf '{}' ';'

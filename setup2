@@ -1,0 +1,43 @@
+#!/bin/bash
+SCRIPT_PATHS="
+clean
+clean-notebooks
+get-timestamps.py
+git-status
+grep-
+make-password.py
+update-projects
+"
+
+mkdir ~/Experiments ~/Projects
+
+SCRIPTS_FOLDER=~/.scripts
+if [ ! -e $SCRIPTS_FOLDER ]; then
+    mkdir $SCRIPTS_FOLDER
+fi
+
+cd $(dirname "$0")
+
+for X in $SCRIPT_PATHS; do
+    cp $X $SCRIPTS_FOLDER
+    chmod a+x $SCRIPTS_FOLDER/$X
+    echo 'cp '$X $SCRIPTS_FOLDER
+done
+
+if [ -n "$1" ]; then
+    ENV_NAME=`basename $1`
+else
+    ENV_NAME=crosscompute
+fi
+echo "Using ENV_NAME=$ENV_NAME"
+ENV_FOLDER=~/.virtualenvs/$ENV_NAME
+if [ ! -d $ENV_FOLDER ]; then
+    python3 -m venv $ENV_FOLDER --system-site-packages
+fi
+sed -i "s/.virtualenvs\/crosscompute/.virtualenvs\/$ENV_NAME/" ~/.bashrc
+
+source ~/.bashrc
+v
+pip install -U \
+    pip \
+    trash-cli

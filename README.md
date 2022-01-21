@@ -1,10 +1,10 @@
-# Useful command-line scripts
+# Useful Scripts and Configurations
 
-Here are scripts that I use on a regular basis.
+Here are scripts and configurations that I use on a regular basis.
 
     wget https://github.com/invisibleroads/scripts/tarball/master -O scripts.tar.gz
     tar xzvf scripts.tar.gz
     cd invisibleroads-scripts-*
-    bash setup-all.sh
-
-For more scripts, please see https://github.com/invisibleroads/scripts-extra
+    bash setup1
+    bash setup2
+    bash setup3

@@ -13,29 +13,8 @@ nmap <silent> <leader>ak :ALEPrevious<cr>
 
 Plug 'bling/vim-airline'
 Plug 'pangloss/vim-javascript'
-" Plug 'tmhedberg/SimpylFold'
-" Plug 'valloric/MatchTagAlways'
+Plug 'valloric/MatchTagAlways'
 Plug 'will133/vim-dirdiff'
-
-" Plug 'Raimondi/delimitMate'
-" Plug 'beautify-web/js-beautify'
-" Plug 'yuezk/vim-js'
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'MaxMEllon/vim-jsx-pretty'
-" Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-surround'
-" Plug 'majutsushi/tagbar'
-" Plug 'cespare/vim-toml'
-
-" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-" let g:mkdp_auto_close = 0
-
-" Plug 'junegunn/goyo.vim'
-" Plug 'junegunn/limelight.vim'
-" let g:limelight_conceal_ctermfg = 236
-" set t_Co=256  " Use limelight in tmux
 
 call plug#end()
 

@@ -16,7 +16,6 @@ export PROJECTS=~/Projects
 # Add aliases
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
-alias cdp='cd -P'
 # If we are in a terminal, free CTRL-S and CTRL-Q
 if [ -t 0 ]; then
     stty stop undef
