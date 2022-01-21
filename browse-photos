@@ -1,5 +1,0 @@
-if [[ $1 == "all" ]]; then
-    mpv --shuffle --image-display-duration=3 .
-else
-    feh -FZz --recursive
-fi

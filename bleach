@@ -1,4 +1,0 @@
-#!/bin/bash
-rm -rf ~/.cache
-rm -rf ~/.npm
-bleachbit --preset --clean

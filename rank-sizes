@@ -1,1 +1,0 @@
-du -d 1 . | sort -n -r | head
