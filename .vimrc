@@ -62,3 +62,5 @@ augroup invisibleroads_scripts
     autocmd BufRead,BufNewFile *.goals set filetype=goals
     autocmd! FileType goals setlocal smartindent foldmethod=expr foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth) foldtext=getline(v:foldstart) fillchars=fold:\ "
 augroup END
+
+colorscheme desert
