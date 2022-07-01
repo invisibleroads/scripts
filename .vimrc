@@ -10,11 +10,14 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_echo_msg_format = '%linter% %s'
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
-
 Plug 'bling/vim-airline'
-Plug 'pangloss/vim-javascript'
-Plug 'valloric/MatchTagAlways'
+Plug 'andymass/vim-matchup'
 Plug 'will133/vim-dirdiff'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+let g:svelte_indent_script = 0
+let g:svelte_indent_style = 0
 
 call plug#end()
 
