@@ -1,3 +1,4 @@
+#!/bin/bash
 find . -name "*.pyc" -exec rm '{}' ';'
 find . -name "*~" -exec rm '{}' ';'
 find . -name ".ipynb_checkpoints" -prune -exec rm -rf '{}' ';'
