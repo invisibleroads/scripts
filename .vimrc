@@ -15,9 +15,9 @@ Plug 'andymass/vim-matchup'
 Plug 'will133/vim-dirdiff'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
-let g:svelte_indent_script = 0
-let g:svelte_indent_style = 0
+" Plug 'evanleck/vim-svelte', {'branch': 'main'}
+" let g:svelte_indent_script = 0
+" let g:svelte_indent_style = 0
 
 call plug#end()
 
