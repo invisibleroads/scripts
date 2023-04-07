@@ -1,0 +1,8 @@
+{
+  "overrides": {
+    "code-font-size": "16px",
+    "content-font-size1": "12px",
+    "ui-font-size1": "12px"
+  },
+  "theme": "JupyterLab Light"
+}

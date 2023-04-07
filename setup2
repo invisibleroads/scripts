@@ -1,4 +1,7 @@
 #!/bin/bash
+CONFIGURATION_FOLDERS="
+.jupyter
+"
 SCRIPT_PATHS="
 clean
 clean-notebooks
@@ -15,13 +18,16 @@ SCRIPTS_FOLDER=~/.scripts
 if [ ! -e $SCRIPTS_FOLDER ]; then
     mkdir $SCRIPTS_FOLDER
 fi
-
 cd $(dirname "$0")
-
 for X in $SCRIPT_PATHS; do
     cp $X $SCRIPTS_FOLDER
     chmod a+x $SCRIPTS_FOLDER/$X
     echo 'cp '$X $SCRIPTS_FOLDER
+done
+
+for X in $CONFIGURATION_FOLDERS; do
+    cp -r $X ~
+    echo 'cp '$X ~
 done
 
 if [ -n "$1" ]; then
