@@ -46,4 +46,5 @@ source ~/.bashrc
 v
 pip install -U \
     pip \
-    trash-cli
+    trash-cli \
+    wheel
