@@ -18,9 +18,6 @@ Plug 'andymass/vim-matchup'
 Plug 'will133/vim-dirdiff'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-" Plug 'evanleck/vim-svelte', {'branch': 'main'}
-" let g:svelte_indent_script = 0
-" let g:svelte_indent_style = 0
 
 call plug#end()
 
@@ -60,9 +57,7 @@ augroup invisibleroads_scripts
     autocmd!
     autocmd BufRead,BufNewFile *.md set filetype=ghmarkdown
     autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
-    autocmd BufRead,BufNewFile *.py_tmpl set filetype=python
-    autocmd BufRead,BufNewFile *.mako,*.mako_tmpl,*.jinja2 set filetype=html
-    autocmd! FileType html,xhtml,sass,scss,css,javascript,json,terraform,typescript,typescriptreact,yaml,nginx setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd! FileType html,xhtml,css,javascript,json,terraform,typescript,typescriptreact,yaml,nginx setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd! FileType ghmarkdown setlocal tabstop=4 shiftwidth=4 softtabstop=4
     " Define hierarchical folds for goals
     autocmd BufRead,BufNewFile *.goals set filetype=goals
