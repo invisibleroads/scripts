@@ -44,7 +44,5 @@ sed -i "s/.virtualenvs\/crosscompute/.virtualenvs\/$ENV_NAME/" ~/.bashrc
 
 source ~/.bashrc
 v
-pip install -U \
-    pip \
-    trash-cli \
-    wheel
+pip install -U pip wheel
+pip install -U trash-cli
