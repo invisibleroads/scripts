@@ -14,12 +14,17 @@ export PS1="[\u@\h \W]\$ "
 export EDITOR=vim
 export PROJECTS=~/Projects
 # Add aliases
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -l'
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    alias ls='ls --color=auto'
+    alias ll='ls -l'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls='ls -G'
+    alias ll='ls -l'
+fi
 # If we are in a terminal, free CTRL-S and CTRL-Q
 if [ -t 0 ]; then
-    stty stop undef
     stty start undef
+    stty stop undef
 fi
 # Enter virtual environment
 v() {
