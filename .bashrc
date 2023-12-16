@@ -13,6 +13,7 @@ export LANG=en_US.UTF-8
 export PS1="[\u@\h \W]\$ "
 export EDITOR=vim
 export PROJECTS=~/Projects
+export BASH_SILENCE_DEPRECATION_WARNING=1
 # Add aliases
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias ls='ls --color=auto'
