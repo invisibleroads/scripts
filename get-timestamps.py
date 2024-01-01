@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+'''
+sudo dnf -y install xsel
+pip install --user pyperclip
+'''
 from argparse import ArgumentParser
 from datetime import datetime, timedelta
 
@@ -16,7 +20,7 @@ def get_timestamps(interval_in_minutes=15):
 if __name__ == '__main__':
     argument_parser = ArgumentParser()
     argument_parser.add_argument(
-        'interval_in_minutes', nargs='?', type=int, default=15)
+        'interval_in_minutes', nargs='?', type=int, default=25)
     args = argument_parser.parse_args()
 
     timestamp1, timestamp2 = get_timestamps(args.interval_in_minutes)
@@ -31,5 +35,4 @@ if __name__ == '__main__':
         import pyperclip
         pyperclip.copy(timestamp_text)
     except Exception:
-        print('sudo dnf -y install xsel')
-        print('pip install --user pyperclip')
+        pass
