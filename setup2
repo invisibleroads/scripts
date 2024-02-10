@@ -40,7 +40,8 @@ ENV_FOLDER=~/.virtualenvs/$ENV_NAME
 if [ ! -d $ENV_FOLDER ]; then
     python3 -m venv $ENV_FOLDER --system-site-packages
 fi
-sed -i "s/.virtualenvs\/crosscompute/.virtualenvs\/$ENV_NAME/" ~/.bashrc
+sed "s/.virtualenvs\/crosscompute/.virtualenvs\/$ENV_NAME/" ~/.bashrc > ~/.bashrc_
+mv ~/.bashrc_ ~/.bashrc
 
 source ~/.bashrc
 v
