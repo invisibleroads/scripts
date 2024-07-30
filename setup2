@@ -10,6 +10,7 @@ git-status
 grep-
 make-password.py
 update-projects
+vimgrep-
 "
 
 mkdir ~/Experiments ~/Projects
