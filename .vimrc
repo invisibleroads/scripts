@@ -65,4 +65,5 @@ augroup invisibleroads_scripts
 augroup END
 
 " Configure colorscheme
-colorscheme default
+" colorscheme default
+colorscheme torte
