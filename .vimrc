@@ -57,7 +57,7 @@ augroup invisibleroads_scripts
     autocmd!
     autocmd BufRead,BufNewFile *.md set filetype=ghmarkdown
     autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
-    autocmd! FileType html,xhtml,css,javascript,json,terraform,terraform-vars,typescript,typescriptreact,yaml,nginx setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd! FileType html,htmldjango,xhtml,css,javascript,json,terraform,terraform-vars,typescript,typescriptreact,yaml,nginx setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd! FileType ghmarkdown setlocal tabstop=4 shiftwidth=4 softtabstop=4
     " Define hierarchical folds for goals
     autocmd BufRead,BufNewFile *.goals set filetype=goals
