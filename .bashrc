@@ -40,4 +40,6 @@ v() {
     # Node
     export NODE_PATH=$VIRTUAL_ENV/lib/node_modules
     export NPM_CONFIG_PREFIX=$VIRTUAL_ENV
+    # pudb
+    export PUDB_RDB_REVERSE=1
 }
