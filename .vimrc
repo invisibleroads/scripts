@@ -18,6 +18,7 @@ Plug 'andymass/vim-matchup'
 Plug 'will133/vim-dirdiff'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
 
