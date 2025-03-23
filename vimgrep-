@@ -1,1 +1,3 @@
-vim $(grep- $@ -l)
+#!/bin/bash
+grep- $@ -l
+grep- $@ -lZ | xargs -0 vim
