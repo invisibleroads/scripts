@@ -1,1 +1,2 @@
-vim $(find -name $@)
+#!/bin/bash
+find . -name "$@" -print0 | xargs -0 vim

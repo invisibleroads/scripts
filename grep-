@@ -1,3 +1,4 @@
+#!/bin/bash
 # Exclude binary files
 # Show line numbers
 # Search recursively and follow symbolic links
