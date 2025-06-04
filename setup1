@@ -2,6 +2,7 @@
 CONFIGURATION_PATHS="
 .bash_profile
 .bashrc
+.ruff.toml
 .tmux.conf
 .vimrc
 "
