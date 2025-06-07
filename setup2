@@ -1,10 +1,6 @@
 #!/bin/bash
-CONFIGURATION_FOLDERS="
-.jupyter
-"
 SCRIPT_PATHS="
 clean
-clean-notebooks
 get-timestamps.py
 git-status
 grep-

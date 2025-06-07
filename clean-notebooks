@@ -1,3 +1,0 @@
-#!/bin/bash
-clean
-find . -name "*.ipynb" -prune -exec jupyter nbconvert --clear-output --inplace '{}' ';'
