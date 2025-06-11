@@ -5,7 +5,7 @@ let g:ale_linters = {'python': ['ruff']}
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['ruff', 'ruff_format']}
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
-let g:ale_echo_msg_format = '%linter% %s'
+let g:ale_echo_msg_format = '%linter% %code% %s'
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
 Plug 'bling/vim-airline'
