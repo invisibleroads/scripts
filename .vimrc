@@ -8,12 +8,12 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_echo_msg_format = '%linter% %code% %s'
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
-Plug 'bling/vim-airline'
-Plug 'andymass/vim-matchup'
-Plug 'will133/vim-dirdiff'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'chrisbra/csv.vim'
+" Plug 'bling/vim-airline'
+" Plug 'andymass/vim-matchup'
+" Plug 'will133/vim-dirdiff'
+" Plug 'othree/html5.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'chrisbra/csv.vim'
 
 call plug#end()
 
