@@ -5,6 +5,7 @@
 # Exclude specific folders and files
 grep -InR --no-messages \
     --exclude='*.min.*' \
-    --exclude-dir=.git \
     --exclude-dir='*.egg-info' \
+    --exclude-dir=.git \
+    --exclude-dir=terraform.tfstate.d \
     "$@" *
