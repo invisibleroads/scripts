@@ -16,12 +16,16 @@ def get_timestamps(date, time, interval_in_minutes):
         start_datetime = start_datetime.replace(
             hour=time.hour, minute=time.minute)
     old_minute_count = start_datetime.minute
-    new_minute_count = int(round(old_minute_count / 15.)) * 15
+    new_minute_count = int(round(
+        old_minute_count / MINUTE_COUNT)) * MINUTE_COUNT
 
     timestamp1 = start_datetime + timedelta(minutes=(
         new_minute_count - old_minute_count))
     timestamp2 = timestamp1 + timedelta(minutes=interval_in_minutes)
     return timestamp1, timestamp2
+
+
+MINUTE_COUNT = 30
 
 
 if __name__ == '__main__':
@@ -33,7 +37,7 @@ if __name__ == '__main__':
         '-t', '--time',
         type=lambda _: datetime.strptime(_, '%H%M'))
     argument_parser.add_argument(
-        '-i', '--interval_in_minutes', type=int, default=30)
+        '-i', '--interval_in_minutes', type=int, default=60)
     args = argument_parser.parse_args()
 
     timestamp1, timestamp2 = get_timestamps(
