@@ -12,7 +12,7 @@ fi
 export LANG=C.UTF-8
 export PS1="[\u@\h \W]\$ "
 export EDITOR=vim
-export PROJECTS=~/Projects
+export PROJECTS_FOLDERS=~/Projects
 export BASH_SILENCE_DEPRECATION_WARNING=1
 # Add aliases
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -45,3 +45,7 @@ v() {
     # pudb
     export PUDB_RDB_REVERSE=1
 }
+# Source extra definitions
+if [ -f ~/.bashrc_ ]; then
+    . ~/.bashrc_
+fi
