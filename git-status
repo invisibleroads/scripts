@@ -1,5 +1,6 @@
 IFS=':'
 for B_FOLDER in $PROJECTS_FOLDERS; do
+    cd $B_FOLDER
     find . -type d -name .git | while read G_FOLDER; do
         X_FOLDER=$(realpath $B_FOLDER/${G_FOLDER/\.git/})
         cd $X_FOLDER
