@@ -5,7 +5,7 @@ for B_FOLDER in $PROJECTS_FOLDERS; do
     find . -type d -name .git | while read G_FOLDER; do
         X_FOLDER=$(realpath $B_FOLDER/${G_FOLDER/\.git/})
         cd $X_FOLDER
-        echo $X_FOLDER
+        echo -n "$X_FOLDER "
         git pull
     done
 done
