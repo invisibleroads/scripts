@@ -7,5 +7,6 @@ grep -InR --no-messages \
     --exclude='*.min.*' \
     --exclude-dir='*.egg-info' \
     --exclude-dir=.git \
+    --exclude-dir=.terraform \
     --exclude-dir=terraform.tfstate.d \
     "$@" *
