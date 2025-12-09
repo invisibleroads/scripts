@@ -45,10 +45,6 @@ v() {
     # pudb
     export PUDB_RDB_REVERSE=1
 }
-# Normalize keyboard layout
-if [ -f ~/.Xmodmap ]; then
-    xmodmap ~/.Xmodmap
-fi
 # Source extra definitions
 if [ -f ~/.bashrc_ ]; then
     . ~/.bashrc_
