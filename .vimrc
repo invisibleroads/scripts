@@ -24,7 +24,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-noremap <c-e> <c-w>
+nnoremap <c-e> <c-w>
 
 nnoremap <Leader>[ :tabprevious<CR>
 nnoremap <Leader>] :tabnext<CR>
@@ -37,6 +37,13 @@ augroup invisibleroads_scripts
         \ setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd BufNewFile,BufRead *hierarchy.txt,*.goals setfiletype hierarchy
     autocmd FileType hierarchy
-        \ setlocal smartindent foldmethod=expr foldtext=getline(v:foldstart) fillchars=fold:\ 
+        \ setlocal smartindent foldmethod=expr foldtext=getline(v:foldstart) fillchars=fold:\
         \ foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth)
 augroup END
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+nnoremap <Leader>w :call TrimWhitespace()<CR>
