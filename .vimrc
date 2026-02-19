@@ -1,6 +1,8 @@
 call plug#begin()
-
 Plug 'dense-analysis/ale'
+" Plug 'will133/vim-dirdiff'
+call plug#end()
+
 let g:ale_linters = {'python': ['ruff']}
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['ruff', 'ruff_format']}
 let g:ale_lint_on_text_changed = 'never'
@@ -8,60 +10,33 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_echo_msg_format = '%linter% %code% %s'
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
-" Plug 'will133/vim-dirdiff'
-
-call plug#end()
 
 filetype plugin indent on
 syntax on
+colorscheme torte
+set autochdir
 
-" Define indent behavior
-set tabstop=4      " Convert existing tabs to 4 spaces
-set shiftwidth=4   " Use >> and << to shift indent by 4 columns
-set softtabstop=4  " Insert/delete 4 spaces with TAB/BACKSPACE
-set expandtab      " Insert spaces when hitting TAB
-set shiftround     " Round indent to multiple of shiftwidth
-set autoindent     " Align new line indent with previous line
+set tabstop=4 shiftwidth=4 softtabstop=4
+set expandtab shiftround autoindent
+set hlsearch incsearch
 
-" Define search behavior
-set hlsearch       " Highlight matches
-set incsearch      " Search incrementally
-
-" Remap window movement keys
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-h> <c-w>h
-map <c-l> <c-w>l
-
-" Define backup window key for browser shells
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 noremap <c-e> <c-w>
 
-" Remap tab movement keys
-map <Leader>[ <esc>:tabprevious<CR>
-map <Leader>] <esc>:tabnext<CR>
+nnoremap <Leader>[ :tabprevious<CR>
+nnoremap <Leader>] :tabnext<CR>
 
-" Configure miscellaneous settings
-set autochdir      " Change directory to the folder containing the current file
-
-" Configure filetype settings
 augroup invisibleroads_scripts
     autocmd!
-    autocmd BufRead,BufNewFile *.md set filetype=ghmarkdown
-    autocmd BufRead,BufNewFile *.json,*.geojson set filetype=json
-    autocmd! FileType html,htmldjango,xhtml,css,javascript,json,terraform,terraform-vars,typescript,typescriptreact,yaml,nginx setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd! FileType ghmarkdown setlocal tabstop=4 shiftwidth=4 softtabstop=4
-    " Define hierarchical folds
-    autocmd BufRead,BufNewFile *hierarchy.txt,*.goals set filetype=hierarchy
-    autocmd! FileType hierarchy setlocal smartindent foldmethod=expr foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth) foldtext=getline(v:foldstart) fillchars=fold:\ "
+    autocmd BufNewFile,BufRead *.md setfiletype markdown
+    autocmd BufNewFile,BufRead *.json,*.geojson setfiletype json
+    autocmd FileType html,htmldjango,xhtml,css,javascript,json,sh,terraform,terraform-vars,typescript,typescriptreact,yaml,nginx
+        \ setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufNewFile,BufRead *hierarchy.txt,*.goals setfiletype hierarchy
+    autocmd FileType hierarchy
+        \ setlocal smartindent foldmethod=expr foldtext=getline(v:foldstart) fillchars=fold:\ 
+        \ foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth)
 augroup END
-
-" Configure colorscheme
-colorscheme torte
-
-" Define function to trim whitespace
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
-:noremap <Leader>w :call TrimWhitespace()<CR>
