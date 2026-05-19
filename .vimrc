@@ -35,10 +35,6 @@ augroup invisibleroads_scripts
     autocmd BufNewFile,BufRead *.json,*.geojson setfiletype json
     autocmd FileType html,htmldjango,xhtml,css,javascript,json,sh,terraform,terraform-vars,typescript,typescriptreact,yaml,nginx
         \ setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufNewFile,BufRead *hierarchy.txt,*.goals setfiletype hierarchy
-    autocmd FileType hierarchy
-        \ setlocal smartindent foldmethod=expr foldtext=getline(v:foldstart) fillchars=fold:\
-        \ foldexpr=(getline(v:lnum)=~'^$')?'=':((indent(v:lnum)<indent(v:lnum+1))?'>'.(indent(v:lnum+1)/&l:shiftwidth):indent(v:lnum)/&l:shiftwidth)
 augroup END
 
 fun! TrimWhitespace()
