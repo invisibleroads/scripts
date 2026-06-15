@@ -1,5 +1,12 @@
 #!/bin/bash
-find . -name "*.pyc" -exec rm '{}' ';'
-find . -name "*~" -exec rm '{}' ';'
-find . -name ".ipynb_checkpoints" -prune -exec rm -rf '{}' ';'
-find . -name "__pycache__" -prune -exec rm -rf '{}' ';'
+set -euo pipefail
+
+find . -name "*.pyc" -delete
+find . -name "*~" -delete
+find . -name ".ipynb_checkpoints" -type d -prune -exec rm -rf {} +
+find . -name "__pycache__" -type d -prune -exec rm -rf {} +
+
+if [ "${1:-}" = "terraform" ]; then
+    find . -type d -name ".terraform" -prune -exec rm -rf {} +
+    find . -type f -name ".terraform.lock.hcl" -delete
+fi

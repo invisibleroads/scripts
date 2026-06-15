@@ -46,6 +46,6 @@ v() {
     export PUDB_RDB_REVERSE=1
 }
 # Source extra definitions
-if [ -f ~/.bashrc_ ]; then
-    . ~/.bashrc_
+if [ -f ~/.bashrc_extra ]; then
+    . ~/.bashrc_extra
 fi
