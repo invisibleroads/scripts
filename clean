@@ -5,6 +5,7 @@ PATTERNS=(
   -name '*.pyc' -o
   -name '*~' -o
   -name '.ipynb_checkpoints' -o
+  -name '.pytest_cache' -o
   -name '__pycache__')
 
 if [ "${1:-}" = "terraform" ]; then
